@@ -1,0 +1,22 @@
+.wrapper {
+   height: 100vh;
+   overflow: hidden;
+}
+
+.content {
+   background-color: white;
+   grid-area: c;
+   padding: 0;
+   margin-top: 0;
+}
+
+.sad_title {
+   font-size: 26px;
+   line-height: 60px;
+   margin-left: 20px;
+   display: block;
+   color: black;
+   font-weight: 300;
+   padding: 0;
+   font-family: "Manrope";
+}

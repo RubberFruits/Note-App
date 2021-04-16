@@ -1,0 +1,20 @@
+.wrapper {
+   height: 100vh;
+   overflow: hidden;
+}
+
+.navbar {
+   height: 100%;
+   grid-area: n;
+   padding-left: 20px;
+   background-color: rgba(95, 158, 160, 0.4);
+}
+
+.navbar_header {
+   font-weight: 300;
+   display: block;
+   line-height: 60px;
+   min-width: 100px;
+   font-size: 23px;
+   font-family: "Manrope";
+}
