@@ -1,8 +1,13 @@
-const AddNoteButton = () => {
+const AddNoteButton = (props) => {
+
+   const onEditMode = () => {
+      props.toggleEditMode(true);
+   }
+
    return (
       <>
          <div>
-            <button> + | Добавить заметку  </button >
+            <button onClick={onEditMode}> + | Добавить заметку  </button >
          </div>
       </>
    )

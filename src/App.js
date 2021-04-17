@@ -1,14 +1,14 @@
 import Header from "./components/Header/Header";
-import Navbar from "./components/Navbar/Navbar";
-import './App.css';
-import Content from "./components/Content/Content";
+import './App.scss';
+import ContainerNavbar from "./components/Navbar/ContainerNavbar";
+import ContainerContent from "./components/Content/ContainerContent";
 
 function App() {
   return (
     <div className="app-wrapper">
       <Header />
-      <Navbar />
-      <Content />
+      <ContainerNavbar />
+      <ContainerContent />
     </div>
   );
 }
