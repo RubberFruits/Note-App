@@ -15,7 +15,10 @@ const Content = (props) => {
                         addNote={props.addNote} />
                      : props.notes.length === 0 ? <h2 className={style.sad_title}>У тебя нет заметок</h2>
                         :
-                        <Notes notes={props.notes} />
+                        <Notes
+                           notes={props.notes}
+                           delNote={props.delNote}
+                        />
                }
             </div>
          </div>

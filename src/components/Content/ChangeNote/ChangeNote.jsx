@@ -4,13 +4,10 @@ const ChangeNote = (props) => {
    return (
       <div>
          <h2>Текст заметки</h2>
-         <NoteForm addNote={props.addNote} />
-         <br />
-         <button onClick={
-            () => {
-               props.toggleEditMode(false);
-            }
-         }>Выход</button>
+         <NoteForm
+            addNote={props.addNote}
+            toggleEditMode={props.toggleEditMode}
+         />
       </div >
    )
 }
@@ -27,6 +24,7 @@ const NoteForm = (props) => {
    const submittingForm = data => {
       props.addNote(data);
       reset();
+      props.toggleEditMode(false);
    }
 
    return (
@@ -34,8 +32,7 @@ const NoteForm = (props) => {
          handleSubmit(submittingForm)}>
          <textarea
             {...register("note", {
-               required: true,
-               maxLength: 50
+               required: true
             })
             }
             id={"note"}

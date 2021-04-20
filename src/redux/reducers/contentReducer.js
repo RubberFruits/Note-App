@@ -1,14 +1,16 @@
-import { dateGetter } from "../../utils/helpers";
+import { Tools } from "../../utils/tools";
 
 const TOGGLE_EDIT_MODE = 'store/content/TOGGLE-EDIT-MODE';
 const ADD_NOTE = 'store/content/ADD-NOTE';
+const GET_NOTES = 'store/content/GET-NOTES';
+const DEL_NOTE = 'store/content/DEL-NOTE';
+const CHANGE_DELETING = 'store/content/CHANGE_DELETING';
+
 
 const initialState = {
-   notes: [
-      { id: 1, date: '16.05.21', text: 'Wonderful!' },
-      { id: 2, date: '11.05.21', text: 'Hello dear ass' }
-   ],
-   isEditMode: false
+   notes: [],
+   isEditMode: false,
+   isDeleting: false
 };
 
 export const contentReducer = (state = initialState, action) => {
@@ -20,17 +22,38 @@ export const contentReducer = (state = initialState, action) => {
             ...state,
             isEditMode: action.isEditMode
          }
+
       case ADD_NOTE:
-         let dateNow = dateGetter();
+         let dateNow = Tools.dateGetter();
+         let newNote = {
+            id: Math.floor(1 + Math.random() * (10000 + 1 - 1)),
+            date: dateNow,
+            text: action.newNote.note
+         }
+         Tools.addNoteToLocalStore(newNote);
          return {
             ...state,
-            notes: [...state.notes,
-            {
-               id: Math.floor(1 + Math.random() * (10000 + 1 - 1)),
-               date: dateNow,
-               text: action.newNote.note
-            }
-            ]
+            notes: [...state.notes, newNote]
+         }
+
+      case GET_NOTES:
+         return {
+            ...state,
+            notes: Tools.getNotesFromLocalStore()
+         }
+
+      case DEL_NOTE:
+         Tools.delNoteFromLocalStorage(action.noteId);
+         return {
+            ...state,
+            notes: state.notes
+               .filter(item => item.id !== action.noteId)
+         }
+
+      case CHANGE_DELETING:
+         return {
+            ...state,
+            isDeleting: action.isDeleting
          }
    }
 }
@@ -46,5 +69,25 @@ export const addNote = (newNote) => (
    {
       type: ADD_NOTE,
       newNote
+   }
+)
+
+export const getNotes = () => (
+   {
+      type: GET_NOTES
+   }
+)
+
+export const delNote = (noteId) => (
+   {
+      type: DEL_NOTE,
+      noteId
+   }
+)
+
+export const changeDeletingMode = (isDeleting) => (
+   {
+      type: CHANGE_DELETING,
+      isDeleting
    }
 )

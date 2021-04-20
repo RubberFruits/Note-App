@@ -1,0 +1,85 @@
+* {
+   box-sizing: border-box;
+}
+
+.cards_wrapper {
+   display: flex;
+   flex-wrap: wrap;
+   width: 100%;
+   margin: 0 auto;
+}
+
+.card {
+   position: relative;
+   margin-right: 10px;
+   width: calc(33% - 10px);
+   flex-grow: 0;
+   font-size: 0.8rem;
+   padding: 15px 0px 10px 10px;
+   font-weight: 600;
+   margin-bottom: 20px;
+   text-align: left;
+   border-radius: 25px;
+   background: #5f9ca1;
+   color: white;
+}
+
+.delete_btn {
+   position: absolute;
+   top: 30%;
+   right: 5%;
+   background-color: #bedbdb;
+   border-radius: 50%;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 40px;
+   color: black;
+   font-size: 20px;
+   height: 40px;
+   flex-shrink: 0;
+   cursor: pointer;
+}
+
+.fade-enter {
+   opacity: 0.01;
+}
+
+.fade-enter-done {
+   opacity: 0.01;
+}
+
+.fade-entering {
+   opacity: 0.01;
+}
+
+.fade-entered {
+   opacity: 0.01;
+   transform: translateY(-100px);
+}
+
+.fade-exiting {
+   opacity: 0.01;
+   transform: translateY(-100px);
+}
+
+.fade-exited {
+   opacity: 0.01;
+   transform: translateY(-100px);
+}
+
+.fade-enter.fade-enter-active {
+   opacity: 1;
+   transition: opacity 400ms ease;
+}
+
+.fade-exit {
+   opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+   opacity: 0.01;
+   transform: translateY(-100px);
+   transition: all 400ms ease;
+}

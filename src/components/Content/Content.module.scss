@@ -1,13 +1,16 @@
 .wrapper {
    height: 100vh;
    overflow: hidden;
+   margin-top: 24px;
+   background-color: white;
 }
 
 .content {
-   background-color: white;
    grid-area: c;
    padding: 0;
-   margin-top: 0;
+   margin-top: 24px;
+   margin-left: 20px;
+   width: 87vw;
 }
 
 .sad_title {
