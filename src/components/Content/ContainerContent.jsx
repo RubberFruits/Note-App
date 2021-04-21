@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import Content from './Content';
-import { addNote, toggleEditMode, getNotes, delNote } from '../../redux/reducers/contentReducer';
+import AllNotes from './AllNotes';
+import CreateNote from './CreateNote/CreateNote';
+import { addNote, getNotes, delNote } from '../../redux/reducers/contentReducer';
+import { Route } from 'react-router-dom';
 
 
 class ContainerContent extends React.Component {
@@ -10,25 +12,42 @@ class ContainerContent extends React.Component {
    }
 
    render() {
-      return <Content
-         {...this.props}
-         addNote={this.props.addNote}
-         toggleEditMode={this.props.toggleEditMode}
-         delNote={this.props.delNote}
-      />
+      return (
+         <>
+            <Route
+               path='/all'
+               exact
+               render={() => <AllNotes
+                  {...this.props}
+                  addNote={this.props.addNote}
+                  delNote={this.props.delNote}
+               />}
+            />
+            <Route
+               path='/important'
+               exact
+               render={() => <h1>IMPORTANT NOTES</h1>}
+            />
+            <Route
+               path='/edit'
+               exact
+               render={() => <CreateNote
+                  addNote={this.props.addNote}
+               />}
+            />
+         </>
+      )
    }
 }
 
 const mapStateToProps = (state) => (
    {
-      isEditMode: state.content.isEditMode,
       notes: state.content.notes
    }
 )
 
 export default connect(mapStateToProps,
    {
-      toggleEditMode,
       addNote,
       getNotes,
       delNote

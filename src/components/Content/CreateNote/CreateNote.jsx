@@ -1,13 +1,21 @@
 import { useForm } from 'react-hook-form';
+import { useHistory } from "react-router-dom";
 
-const ChangeNote = (props) => {
+const CreateNote = (props) => {
+
+   const history = useHistory();
+
+   const onExit = () => {
+      history.push('/all');
+   }
+
    return (
       <div>
          <h2>Текст заметки</h2>
          <NoteForm
             addNote={props.addNote}
-            toggleEditMode={props.toggleEditMode}
          />
+         <div><button onClick={onExit}>Выход</button></div>
       </div >
    )
 }
@@ -24,23 +32,31 @@ const NoteForm = (props) => {
    const submittingForm = data => {
       props.addNote(data);
       reset();
-      props.toggleEditMode(false);
    }
 
    return (
       <form onSubmit={
          handleSubmit(submittingForm)}>
-         <textarea
+         <input
             {...register("note", {
                required: true
             })
             }
             id={"note"}
-            placeholder={"Ваша заметка"}></textarea>
+            placeholder={"Ваша заметка"} />
+         <div>
+            <label htmlFor="isImportant">Это важная заметка?</label>
+            <input
+               {...register("isImportant")}
+               type="checkbox"
+               placeholder="luo"
+               id={"isImportant"}
+            />
+         </div>
          {errors.note && <p>--Заполните это поле--</p>}
          <div><button type="submit">Подтвердить</button></div>
       </form >
    )
 }
 
-export default ChangeNote;
+export default CreateNote;

@@ -10,13 +10,28 @@
    grid-area: n;
    padding-left: 20px;
    background-color: $navbar-color;
+   padding-top: 10px;
 }
 
-.navbar_header {
+.navbar_item {
    font-weight: 300;
    display: block;
-   line-height: 60px;
-   min-width: 100px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+   width: 160px;
+   min-height: 50px;
    font-size: 23px;
    font-family: "Manrope";
+   text-decoration: none;
+   color: black;
+   transition: all 0.3s ease;
+
+   &_active {
+      color: white;
+   }
+
+   &:hover {
+      color: white;
+      border-bottom: 1px solid white;
+   }
 }

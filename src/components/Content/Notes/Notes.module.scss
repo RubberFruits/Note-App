@@ -12,7 +12,7 @@
 .card {
    position: relative;
    margin-right: 10px;
-   width: calc(33% - 10px);
+   width: calc(25% - 10px);
    flex-grow: 0;
    font-size: 0.8rem;
    padding: 15px 0px 10px 10px;
@@ -22,6 +22,11 @@
    border-radius: 25px;
    background: #5f9ca1;
    color: white;
+}
+
+.card_important {
+   @extend .card;
+   background: #e57373;
 }
 
 .delete_btn {
@@ -40,46 +45,4 @@
    height: 40px;
    flex-shrink: 0;
    cursor: pointer;
-}
-
-.fade-enter {
-   opacity: 0.01;
-}
-
-.fade-enter-done {
-   opacity: 0.01;
-}
-
-.fade-entering {
-   opacity: 0.01;
-}
-
-.fade-entered {
-   opacity: 0.01;
-   transform: translateY(-100px);
-}
-
-.fade-exiting {
-   opacity: 0.01;
-   transform: translateY(-100px);
-}
-
-.fade-exited {
-   opacity: 0.01;
-   transform: translateY(-100px);
-}
-
-.fade-enter.fade-enter-active {
-   opacity: 1;
-   transition: opacity 400ms ease;
-}
-
-.fade-exit {
-   opacity: 1;
-}
-
-.fade-exit.fade-exit-active {
-   opacity: 0.01;
-   transform: translateY(-100px);
-   transition: all 400ms ease;
 }
