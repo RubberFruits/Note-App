@@ -4,7 +4,7 @@ import store from './redux/store';
 import { BrowserRouter } from 'react-router-dom';
 //Components + styles
 import Header from "./components/Header/Header";
-import ContainerNavbar from "./components/Navbar/ContainerNavbar";
+import Navbar from "./components/Navbar/Navbar";
 import ContainerContent from "./components/Content/ContainerContent";
 import './App.scss';
 
@@ -15,7 +15,7 @@ function App() {
       <Provider store={store}>
         <div className="app-wrapper">
           <Header />
-          <ContainerNavbar />
+          <Navbar />
           <ContainerContent />
         </div>
       </Provider>

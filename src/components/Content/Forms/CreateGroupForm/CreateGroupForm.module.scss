@@ -1,0 +1,25 @@
+.groupForm {
+   transition: all 0.2s ease;
+   border: 3px solid #e2dec7;
+   border-radius: 20px;
+   margin-top: 20px;
+   max-width: 600px;
+   display: block;
+   padding: 10px;
+}
+
+.inputDiv {
+   width: 30vw;
+   display: flex;
+}
+
+.addGroup {
+   margin-top: 10px;
+   margin-left: 30px;
+   background-color: #22ac98;
+   width: 200px;
+   & .materialIcon:hover {
+      transition: all 0.3s ease;
+      transform: scale(1.5);
+   }
+}

@@ -1,0 +1,67 @@
+.card {
+   position: relative;
+   margin-right: 15px;
+   margin-top: 10px;
+   /* width: calc(15% - 10px); */
+   width: 310px;
+   font-size: 0.8rem;
+   font-weight: 600;
+   margin-bottom: 10px;
+   text-align: left;
+   border-radius: 15px;
+   background: #5f9ca1;
+   color: white;
+   min-height: 150px;
+   height: max-content;
+   cursor: pointer;
+   overflow: hidden;
+}
+
+.noteText {
+   display: inline-block;
+   margin-left: 10px;
+   font-size: 17px;
+   font-weight: 100;
+   position: absolute;
+   top: 40px;
+   left: 0;
+   transition: all 0.3s ease;
+}
+
+.noteHeader {
+   display: inline-block;
+   width: 220px;
+   font-size: 25px;
+   font-weight: bold;
+   white-space: normal;
+   margin-bottom: 70px;
+   margin-left: 10px;
+   max-height: max-content;
+   height: 20px;
+   transition: all 0.3s ease;
+}
+
+.delete_btn {
+   position: absolute;
+   top: 22px;
+   right: 13px;
+   background-color: white;
+   border-radius: 50%;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 30px;
+   color: black;
+   font-size: 12px;
+   font-weight: 700;
+   height: 30px;
+   flex-shrink: 0;
+   cursor: pointer;
+   transition: all 0.2s ease;
+
+   &:hover {
+      background-color: white;
+      transform: scale(1.3);
+   }
+}

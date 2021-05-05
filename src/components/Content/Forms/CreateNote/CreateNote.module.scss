@@ -1,0 +1,19 @@
+.inputClass {
+   width: 500px;
+}
+
+.exitBtn {
+   margin-left: 10px;
+   background-color: #ed6d75;
+
+   &:hover {
+      background-color: #fd0302;
+   }
+}
+
+.errorMessage {
+   position: absolute;
+   top: 20px;
+   left: 100px;
+   background-color: #fd0302;
+}

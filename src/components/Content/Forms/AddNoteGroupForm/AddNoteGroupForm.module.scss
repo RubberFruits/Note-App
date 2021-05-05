@@ -1,0 +1,12 @@
+.inputDiv {
+   width: 30vw;
+   display: flex;
+}
+
+.exitBtn {
+   background-color: #ed6d75;
+   margin-left: 275px;
+   &:hover {
+      background-color: #fd0302;
+   }
+}

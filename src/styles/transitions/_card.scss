@@ -1,0 +1,35 @@
+.fade-enter {
+   opacity: 0.01;
+   transition: all 400ms ease;
+}
+
+.fade-enter-done {
+   opacity: 0.01;
+   transition: all 400ms ease;
+}
+
+.fade-entering {
+   opacity: 0.01;
+   transition: all 400ms ease;
+}
+
+.fade-enter.fade-enter-active {
+   opacity: 1;
+   transition: all 400ms ease;
+}
+
+.fade-exit {
+   opacity: 1;
+}
+
+.fade-exit {
+   opacity: 0;
+   transition: all 300ms ease;
+   /* transform: translateY(-150px); */
+   transform: scale(0);
+}
+
+.fade-exit-done {
+   opacity: 0;
+   transition: all 300ms ease;
+}

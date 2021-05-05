@@ -1,37 +1,38 @@
-@import "../../variables.scss";
-
-.wrapper {
-   height: 100vh;
-   overflow: hidden;
-}
+@import "../../styles/variables.scss";
 
 .navbar {
-   height: 100%;
+   min-height: 100vh;
    grid-area: n;
-   padding-left: 20px;
+   padding-left: 12px;
    background-color: $navbar-color;
-   padding-top: 10px;
+   padding-top: 15px;
 }
 
 .navbar_item {
-   font-weight: 300;
+   font-weight: 700;
    display: block;
    margin-top: 20px;
    margin-bottom: 20px;
-   width: 160px;
-   min-height: 50px;
-   font-size: 23px;
+   width: 200px;
+   height: 30px;
+   font-size: 17px;
    font-family: "Manrope";
    text-decoration: none;
    color: black;
-   transition: all 0.3s ease;
+   transition: color 0.3s ease;
 
    &_active {
       color: white;
+      border-bottom: 2px dashed white;
    }
 
    &:hover {
       color: white;
       border-bottom: 1px solid white;
    }
+}
+
+.addGroup {
+   display: inline-block;
+   width: 160px;
 }

@@ -1,0 +1,94 @@
+@import "../../../../styles/variables.scss";
+
+.group {
+   display: inline-block;
+   position: relative;
+   margin-top: 15px;
+   max-width: 200px;
+   width: 200px;
+   box-sizing: content-box;
+   padding: 0 10px;
+   border-radius: 8px;
+   cursor: context-menu;
+   font-size: 25px;
+   color: white;
+   background-color: #5f9ea0;
+   transition: all 0.3s ease;
+   margin-left: 10px;
+   margin-bottom: 10px;
+   min-height: 100px;
+
+   &:hover {
+      transform: scale(1.1);
+      color: white;
+      box-shadow: 1px 3px 28px -15px #bcbebd;
+   }
+
+   &_length {
+      display: inline-block;
+      margin-left: 5px;
+      font-size: 17px;
+   }
+}
+
+.groupText {
+   display: inline-block;
+   width: 170px;
+   font-size: 20px;
+   white-space: pre-wrap;
+   height: max-content;
+}
+
+.addNoteToGroup {
+   position: absolute;
+   right: 5px;
+   bottom: 5px;
+   height: 30px;
+   width: 30px;
+   font-size: 20px;
+   font-weight: bold;
+   vertical-align: middle;
+   line-height: 20px;
+   background-color: #22ac98;
+   &:hover {
+      background-color: white;
+      color: black;
+      transform: scale(1.2);
+   }
+
+   &:active {
+      background-color: #207b73;
+   }
+}
+
+.addIcon {
+   color: black;
+}
+
+.addIcon:hover {
+   color: black;
+}
+
+.delGroupButton {
+   position: absolute;
+   vertical-align: middle;
+   height: 30px;
+   font-size: 10px;
+   line-height: 20px;
+   width: 30px;
+   right: 5px;
+   top: 5px;
+   background-color: #e57373;
+   color: white;
+   font-weight: bold;
+   transition: all 0.2s ease;
+   &:hover {
+      background-color: white;
+      color: black;
+      transform: scale(1.2);
+   }
+
+   &:active {
+      background-color: #207b73;
+   }
+}

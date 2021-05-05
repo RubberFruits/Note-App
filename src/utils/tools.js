@@ -1,3 +1,5 @@
+import M from 'materialize-css';
+
 export const Tools = {
 
    dateGetter() {
@@ -13,25 +15,36 @@ export const Tools = {
       return d + '.' + m + '.' + y;
    },
 
-   addNoteToLocalStore(note) {
-
-      const all = JSON.parse(localStorage.getItem('notes') || '[]'); //GET NOTES FROM LOCAL
-      all.push(note);
-      localStorage.setItem('notes', JSON.stringify(all));
+   errorHandler(errorHtml) {
+      M.toast({ html: errorHtml, classes: 'rounded pulse red accent-2' })
    },
-   delNoteFromLocalStorage(noteId) {
-      let parsingLocalStorage = JSON.parse(localStorage.getItem('notes'));
+
+   addToLocalStore(whatAdd, whereAdd) {
+
+      const all = JSON.parse(localStorage.getItem(whereAdd) || '[]');
+      all.push(whatAdd);
+      localStorage.setItem(whereAdd, JSON.stringify(all));
+   },
+
+   addToLocalStoreSetting(whatAdd, whereAdd) {
+      localStorage.setItem(whereAdd, whatAdd);
+   },
+
+   delFromLocalStorage(whereDel, whatDel) {
+      let parsingLocalStorage = JSON.parse(localStorage.getItem(whereDel));
       let localStorWithoutDeletedNote = parsingLocalStorage
-         .filter(item => item.id !== noteId);
+         .filter(item => item.id !== whatDel);
       if (localStorWithoutDeletedNote.length !== 0) {
-         localStorage.setItem('notes', JSON.stringify(localStorWithoutDeletedNote));
+         localStorage.setItem(whereDel, JSON.stringify(localStorWithoutDeletedNote));
          return;
       }
       localStorage.clear();
    },
 
-
-   getNotesFromLocalStore() {
-      return JSON.parse(localStorage.getItem('notes') || '[]');
+   getFromLocalStore(whatGet) {
+      if (whatGet === 'notesView') {
+         return JSON.parse(localStorage.getItem(whatGet));
+      }
+      return JSON.parse(localStorage.getItem(whatGet) || '[]');
    }
 }
