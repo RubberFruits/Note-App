@@ -27,14 +27,20 @@
    border-radius: 20px;
 }
 
+.breadCrumb_span {
+   line-height: 20px;
+}
+
 .breadcrumb_item {
    border-radius: 15px;
    margin: 0 5px;
    font-weight: bold;
+   transition: all 0.5s ease;
 }
 
 .breadcrumb_item_active {
    background-color: rgba(184, 201, 203, 0.5);
+   transition: all 0.5s ease;
 }
 
 .sad_title {

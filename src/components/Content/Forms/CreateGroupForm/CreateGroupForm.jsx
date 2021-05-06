@@ -22,7 +22,7 @@ const CreateGroupForm = (props) => {
          className={style.groupForm}
          onSubmit={handleSubmit(submittingForm)}>
          <div className={`input-field s5 inputDiv ${style.inputDiv}`}>
-            <i class="material-icons prefix">mode_edit</i>
+            <i className="material-icons prefix">mode_edit</i>
             <input
                {...register('group', {
                   required: true

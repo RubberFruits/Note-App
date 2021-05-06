@@ -11,15 +11,15 @@ const Notes = (props) => {
    return (
       <>
          <nav className={`${style.breadcrumbContainer} valign-wrapper`}>
-            <span> Отображение: </span>
+            <span className={style.breadCrumb_span}> Отображение: </span>
             <button
                onClick={() => props.changeNotesView('cards')}
-               className={`waves-effect waves-teal btn-flat ${style.breadcrumb_item} ${props.notesView === 'cards' ? style.breadcrumb_item_active : ''}`}
+               className={`btn-flat  ${style.breadcrumb_item} ${props.notesView === 'cards' ? style.breadcrumb_item_active : ''}`}
             >Карточки</button>
             <span> / </span>
             <button
                onClick={() => props.changeNotesView('list')}
-               className={`waves-effect waves-teal btn-flat ${style.breadcrumb_item} ${props.notesView === 'list' ? style.breadcrumb_item_active : ''}`}
+               className={`btn-flat ${style.breadcrumb_item} ${props.notesView === 'list' ? style.breadcrumb_item_active : ''}`}
             >Список</button>
          </nav>
 

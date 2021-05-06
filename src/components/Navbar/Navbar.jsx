@@ -13,7 +13,7 @@ const Navbar = (props) => {
                   activeClassName={style.navbar_item_active}
 
                ><div className={' valign-wrapper'}>
-                     <i class="material-icons prefix">library_books</i> Все заметки
+                     <i className="material-icons prefix">library_books</i><span className={style.navbar_item_span}>Все заметки</span>
                   </div>
                </NavLink>
                <NavLink
@@ -22,7 +22,7 @@ const Navbar = (props) => {
                   activeClassName={style.navbar_item_active}
                >
                   <div className={' valign-wrapper'}>
-                     <i class="material-icons prefix">priority_high</i> C пометкой "Важное"
+                     <i className="material-icons prefix">priority_high</i><span className={style.navbar_item_span}>C пометкой "Важное"</span>
                   </div>
                </NavLink>
                <NavLink
@@ -30,7 +30,7 @@ const Navbar = (props) => {
                   className={style.navbar_item}
                   activeClassName={style.navbar_item_active}
                ><div className={' valign-wrapper'}>
-                     <i class="material-icons prefix">storage</i> Группы заметок
+                     <i className="material-icons prefix">storage</i><span className={style.navbar_item_span}>Группы заметок</span>
                   </div>
                </NavLink>
                <NavLink

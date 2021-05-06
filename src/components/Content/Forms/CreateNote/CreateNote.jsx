@@ -38,7 +38,7 @@ const NoteForm = (props) => {
       <form onSubmit={
          handleSubmit(submittingForm)}>
          <div className={`input-field ${style.inputClass}`}>
-            <i class="material-icons prefix">mode_edit</i>
+            <i className="material-icons prefix">mode_edit</i>
             <input
                {...register("note", {
                   required: true

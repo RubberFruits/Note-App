@@ -3,7 +3,7 @@
 .navbar {
    min-height: 100vh;
    grid-area: n;
-   padding-left: 12px;
+   padding-left: 2px;
    background-color: $navbar-color;
    padding-top: 15px;
 }
@@ -13,26 +13,35 @@
    display: block;
    margin-top: 20px;
    margin-bottom: 20px;
-   width: 200px;
-   height: 30px;
+   padding-right: 5px;
+   padding-top: 5px;
+   padding-left: 5px;
+   margin-left: 10px;
+   width: 220px;
+   height: 40px;
    font-size: 17px;
    font-family: "Manrope";
    text-decoration: none;
    color: black;
-   transition: color 0.3s ease;
+   transition: all 0.3s ease;
 
    &_active {
       color: white;
-      border-bottom: 2px dashed white;
+      border: 2px dashed white;
+      border-radius: 10px;
    }
 
    &:hover {
       color: white;
-      border-bottom: 1px solid white;
    }
+}
+
+.navbar_item_span {
+   margin-left: 5px;
 }
 
 .addGroup {
    display: inline-block;
-   width: 160px;
+   margin-left: 15px;
+   width: 195px;
 }
