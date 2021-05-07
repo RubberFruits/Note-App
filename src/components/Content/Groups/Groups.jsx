@@ -7,7 +7,7 @@ import GroupHead from './GroupHead/GroupHead';
 import CreateGroupForm from '../Forms/CreateGroupForm/CreateGroupForm';
 import '../../../styles/transitions/_formGroup.scss';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { ContextMenu, MenuItem, ContextMenuTrigger, SubMenu } from "react-contextmenu";
+import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
 import { RiDropFill, RiQuillPenFill } from "react-icons/ri";
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import '../../../styles/contextMenu.scss'
