@@ -6,7 +6,8 @@ import {
    addNote, getFromLocalStore,
    delNote, addGroup,
    addNoteToGroup, delGroup,
-   changeNotesView, delNoteFromGroup
+   changeNotesView, delNoteFromGroup,
+   renameGroup
 } from '../../redux/reducers/contentReducer';
 import { Redirect, Route } from 'react-router-dom';
 import '../../styles/_wrapper.scss';
@@ -64,6 +65,7 @@ class ContainerContent extends React.Component {
                      addNoteToGroup={this.props.addNoteToGroup}
                      delGroup={this.props.delGroup}
                      delNoteFromGroup={this.props.delNoteFromGroup}
+                     renameGroup={this.props.renameGroup}
                   />
                )}
             />
@@ -97,5 +99,6 @@ export default connect(mapStateToProps,
       addNoteToGroup,
       delGroup,
       changeNotesView,
-      delNoteFromGroup
+      delNoteFromGroup,
+      renameGroup
    })(ContainerContent);

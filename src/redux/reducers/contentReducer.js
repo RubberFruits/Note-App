@@ -15,6 +15,7 @@ const ADD_GROUP = 'store/content/ADD-GROUP';
 const ADD_NOTE_TO_GROUP = 'store/content/ADD_NOTE_TO_GROUP';
 const DEL_GROUP = 'store/content/DEL-GROUP'
 const DEL_NOTE_FROM_GROUP = 'store/content/DEL-GROUP-NOTE';
+const RENAME_GROUP = 'store/content/RENAME-GROUP'
 
 const initialState = {
    notes: [],
@@ -141,6 +142,17 @@ export const contentReducer = (state = initialState, action) => {
                ...state.groups
             ]
          }
+
+      case RENAME_GROUP:
+         let findedGroup = state.groups.find(item => item.id === action.groupId);
+         findedGroup.groupName = action.newGroupName;
+         localStorage.setItem('groups', JSON.stringify(state.groups));
+         return {
+            ...state,
+            groups: [
+               ...state.groups
+            ]
+         }
    }
 }
 
@@ -200,5 +212,13 @@ export const delNoteFromGroup = (groupId, noteId) => (
       type: DEL_NOTE_FROM_GROUP,
       groupId,
       noteId
+   }
+)
+
+export const renameGroup = (groupId, newGroupName) => (
+   {
+      type: RENAME_GROUP,
+      groupId,
+      newGroupName
    }
 )

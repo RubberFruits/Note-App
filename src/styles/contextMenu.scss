@@ -1,7 +1,9 @@
 .react-contextmenu-wrapper {
-   border: 1px solid black;
-   max-width: 225px;
-   max-height: 140px;
+   width: 220px;
+   height: 140px;
+   margin-top: 15px;
+   border-radius: 8px;
+   box-sizing: content-box;
 }
 
 nav.react-contextmenu {
@@ -46,20 +48,14 @@ nav.react-contextmenu {
    margin-left: 10px;
 }
 .react-contextmenu-item svg {
-   font-size: 14px;
+   font-size: 18px;
 }
-.react-contextmenu-item .copy {
-   color: skyblue;
+.react-contextmenu-item .rename {
+   color: blue;
 }
 .react-contextmenu-item .delete {
    color: red;
 }
-.react-contextmenu-item .send {
-   color: blue;
-}
-.react-contextmenu-item .share {
-   color: green;
-}
-.react-contextmenu-item .watchlist {
-   color: rebeccapurple;
+.react-contextmenu-item .paint {
+   color: orange;
 }

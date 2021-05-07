@@ -1,4 +1,5 @@
 import style from './Groups.module.scss';
+import React from 'react';
 import { useState } from 'react';
 import AddNoteGroupForm from '../Forms/AddNoteGroupForm/AddNoteGroupForm';
 import GroupNote from './GroupNote/GroupNote';
@@ -6,19 +7,27 @@ import GroupHead from './GroupHead/GroupHead';
 import CreateGroupForm from '../Forms/CreateGroupForm/CreateGroupForm';
 import '../../../styles/transitions/_formGroup.scss';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
-import { FaRegCopy, FaList, FaEllipsisV, FaShareAlt } from 'react-icons/fa';
-import { RiSendPlaneFill, RiDeleteBin6Line } from 'react-icons/ri';
+import { ContextMenu, MenuItem, ContextMenuTrigger, SubMenu } from "react-contextmenu";
+import { RiDropFill, RiQuillPenFill } from "react-icons/ri";
+import { RiDeleteBin6Line } from 'react-icons/ri';
 import '../../../styles/contextMenu.scss'
 
 const Groups = (props) => {
 
    const handleContextMenu = (e, data, target) => {
+      const groupName = target.getAttribute('groupname');
+      const groupId = target.getAttribute('groupid');
+
       switch (data.action) {
          default:
             return
-         case 'console':
-            console.log(target.getAttribute('groupid'));
+         case 'rename':
+            let res = prompt('Введите новое название группы:', groupName);
+            if (res === null || res === "") {
+               break;
+            }
+            props.renameGroup(groupId, res);
+            break;
       }
    }
 
@@ -53,7 +62,10 @@ const Groups = (props) => {
                   >
                      <ContextMenuTrigger
                         id="contextmenu"
-                        attributes={{ groupid: group.id }}
+                        attributes={{
+                           groupid: group.id,
+                           groupname: group.groupName
+                        }}
                      >
                         <GroupHead
                            key={group.id}
@@ -68,22 +80,24 @@ const Groups = (props) => {
 
                      {/*  Форма добавления ноты */}
 
-                     <TransitionGroup>
-                        {isEditMode.includes(group.id)
-                           ?
-                           <CSSTransition
-                              timeout={400}
-                              classNames="form"
-                           >
-                              <div className={style.addGroupContainer}>
-                                 <AddNoteGroupForm
-                                    addNoteToGroup={props.addNoteToGroup}
-                                    groupId={group.id}
-                                    showEditMode={showEditMode}
-                                 />
-                              </div>
-                           </CSSTransition>
-                           : null}
+                     <TransitionGroup  >
+                        {
+                           isEditMode.includes(group.id)
+                              ?
+                              <CSSTransition
+                                 timeout={400}
+                                 classNames="form"
+                              >
+                                 <div className={style.addGroupContainer}>
+                                    <AddNoteGroupForm
+                                       addNoteToGroup={props.addNoteToGroup}
+                                       groupId={group.id}
+                                       showEditMode={showEditMode}
+                                    />
+                                 </div>
+                              </CSSTransition>
+                              : null
+                        }
                      </TransitionGroup>
 
                      {/* Показ нот  */}
@@ -111,7 +125,7 @@ const Groups = (props) => {
                            )) : ''
                         }
                      </TransitionGroup>
-                  </div>
+                  </div >
                ))
          }
          <ContextMenu
@@ -119,40 +133,25 @@ const Groups = (props) => {
          >
             <MenuItem
                onClick={handleContextMenu}
-               data={{ action: 'console' }}
+               data={{
+                  action: 'rename'
+               }}
             >
-               <FaRegCopy className="copy" />
-               <span>Напиши своё айди</span>
+               <RiQuillPenFill className="rename" />
+               <span>Переименовать группу</span>
             </MenuItem>
+
             <MenuItem
                onClick={handleContextMenu}
             >
-               <FaEllipsisV className="openwith" />
-               <span>Open with</span>
-            </MenuItem>
-            <MenuItem
-               onClick={handleContextMenu}
-            >
-               <FaList className="watchlist" />
-               <span>Add to watchlist</span>
-            </MenuItem>
-            <MenuItem
-               onClick={handleContextMenu}
-            >
-               <RiSendPlaneFill className="send" />
-               <span>Send</span>
+               <RiDropFill className="paint" />
+               <span>Изменить цвет группы</span>
             </MenuItem>
             <MenuItem
                onClick={handleContextMenu}
             >
                <RiDeleteBin6Line className="delete" />
-               <span>Delete</span>
-            </MenuItem>
-            <MenuItem
-               onClick={handleContextMenu}
-            >
-               <FaShareAlt className="share" />
-               <span>Share</span>
+               <span>Удалить</span>
             </MenuItem>
          </ContextMenu>
       </div >
