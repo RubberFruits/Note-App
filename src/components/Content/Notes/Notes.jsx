@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import Modal from '../../common/Modal/Modal.jsx';
 import style from './Notes.module.scss';
 import '../../../styles/transitions/_card.scss';
 
@@ -22,6 +23,7 @@ const Notes = (props) => {
                className={`btn-flat ${style.breadcrumb_item} ${props.notesView === 'list' ? style.breadcrumb_item_active : ''}`}
             >Список</button>
          </nav>
+
 
          {
             props.notes.length === 0 ? <h2 className={style.sad_title}>Нет заметок</h2>
@@ -51,6 +53,7 @@ const Notes = (props) => {
                                     isImportant={note.isImportant}
                                     setIsTransition={setIsTransition}
                                     noteView={props.notesView}
+
                                  />
                               </CSSTransition>
                            ))}
@@ -64,6 +67,13 @@ const Notes = (props) => {
 }
 
 const Note = (props) => {
+
+   const [isModal, setIsModal] = useState(false);
+
+   const showModal = (props) => {
+      setIsModal(true);
+      console.log(props);
+   }
 
    let noteClass = props.noteView === 'list'
       ? `${style.list_item} ${props.isImportant ? style.important_note : ''}`
@@ -87,18 +97,39 @@ const Note = (props) => {
    }
 
    return (
-      <div className={`${noteClass} z-depth-2`}>
-         <h4 className={props.noteView === 'cards' ? style.noteText : style.noteTextList}
-         >{renderSwitch(props.noteView)}</h4>
-         <p className={props.noteView === 'cards' ? style.noteDate : style.noteDateList}>{props.date}</p>
+      <>
          <div
-            onClick={() => {
-               props.setIsTransition(true);
-               props.delnote(props.id);
-            }}
-            className={props.noteView === 'cards' ? style.delete_btn : style.delete_btn_list}
-         >X</div>
-      </div >
+            onClick={() => showModal(props)}
+            className={`${noteClass} z-depth-2`}>
+            <h4 className={props.noteView === 'cards' ? style.noteText : style.noteTextList}
+            >{renderSwitch(props.noteView)}</h4>
+            <p className={props.noteView === 'cards' ? style.noteDate : style.noteDateList}>{props.date}</p>
+            <div
+               onClick={(e) => {
+                  e.stopPropagation();
+                  props.setIsTransition(true);
+                  props.delnote(props.id);
+               }}
+               className={props.noteView === 'cards' ? style.delete_btn : style.delete_btn_list}
+            >X</div>
+         </div >
+         <CSSTransition
+            {...props}
+            in={isModal}
+            key={props.id}
+            timeout={500}
+            classNames="modal_trans"
+         >
+            <Modal
+               setIsModal={setIsModal}
+               isModal={isModal}
+               text={props.text}
+               date={props.date}
+               isImportant={props.isImportant}
+               id={props.id}
+            />
+         </CSSTransition>
+      </>
    )
 }
 

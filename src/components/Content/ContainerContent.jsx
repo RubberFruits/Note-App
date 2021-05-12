@@ -7,7 +7,7 @@ import {
    delNote, addGroup,
    addNoteToGroup, delGroup,
    changeNotesView, delNoteFromGroup,
-   renameGroup
+   renameGroup, changeColor
 } from '../../redux/reducers/contentReducer';
 import { Redirect, Route } from 'react-router-dom';
 import '../../styles/_wrapper.scss';
@@ -66,6 +66,7 @@ class ContainerContent extends React.Component {
                      delGroup={this.props.delGroup}
                      delNoteFromGroup={this.props.delNoteFromGroup}
                      renameGroup={this.props.renameGroup}
+                     changeColor={this.props.changeColor}
                   />
                )}
             />
@@ -100,5 +101,6 @@ export default connect(mapStateToProps,
       delGroup,
       changeNotesView,
       delNoteFromGroup,
-      renameGroup
+      renameGroup,
+      changeColor
    })(ContainerContent);

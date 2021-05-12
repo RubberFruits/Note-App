@@ -1,16 +1,17 @@
 import style from './GroupHead.module.scss';
-import { useRef } from 'react';
 
 const GroupHead = (props) => {
 
-   const groupName = useRef(props.groupId);
+
 
    return (
       <>
          <div
+            onContextMenu={() => props.contextMenuId(props.groupId)}
             onClick={() => props.showGroupNotes(props.groupId)}
             className={`${style.group} z-depth-2`}
-         ><h4 className={style.groupText} ref={groupName}>{props.groupName}</h4><br /><p className={style.group_length}>| Заметок: {props.countNotes} </p>
+            style={{ backgroundColor: props.groupColor }}
+         ><h4 className={style.groupText} >{props.groupName}</h4><br /><p className={style.group_length}>| Заметок: {props.countNotes} </p>
             <button
                onClick={(e) => {
                   e.stopPropagation();

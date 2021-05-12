@@ -16,6 +16,7 @@ const ADD_NOTE_TO_GROUP = 'store/content/ADD_NOTE_TO_GROUP';
 const DEL_GROUP = 'store/content/DEL-GROUP'
 const DEL_NOTE_FROM_GROUP = 'store/content/DEL-GROUP-NOTE';
 const RENAME_GROUP = 'store/content/RENAME-GROUP'
+const CHANGE_COLOR = 'store/content/CHANGE-COLOR';
 
 const initialState = {
    notes: [],
@@ -99,7 +100,8 @@ export const contentReducer = (state = initialState, action) => {
          const newGroup = {
             id: uuid(),
             groupName: action.newGroup,
-            groupNotes: []
+            groupNotes: [],
+            backgroundColor: '#5f9ea0'
          }
          Tools.addToLocalStore(newGroup, 'groups');
          return {
@@ -153,6 +155,17 @@ export const contentReducer = (state = initialState, action) => {
                ...state.groups
             ]
          }
+
+      case CHANGE_COLOR:
+         state.groups.find(item => item.id === action.groupId).backgroundColor = action.newColor;
+         localStorage.setItem('groups', JSON.stringify(state.groups));
+         return {
+            ...state,
+            groups: [
+               ...state.groups
+            ]
+         }
+
    }
 }
 
@@ -220,5 +233,13 @@ export const renameGroup = (groupId, newGroupName) => (
       type: RENAME_GROUP,
       groupId,
       newGroupName
+   }
+)
+
+export const changeColor = (groupId, newColor) => (
+   {
+      type: CHANGE_COLOR,
+      groupId,
+      newColor
    }
 )
