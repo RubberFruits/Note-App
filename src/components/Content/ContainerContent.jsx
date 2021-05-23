@@ -9,14 +9,17 @@ import {
    changeNotesView, delNoteFromGroup,
    renameGroup, changeColor
 } from '../../redux/reducers/contentReducer';
+import { addTask, getTasks } from '../../redux/reducers/tasksReducer';
 import { Redirect, Route } from 'react-router-dom';
 import '../../styles/_wrapper.scss';
 import '../../styles/transitions/_formGroup.scss'
 import Groups from './Groups/Groups';
+import Tasks from './Tasks/Tasks';
 
 class ContainerContent extends React.Component {
    componentDidMount() {
       this.props.getFromLocalStore();
+      this.props.getTasks();
    }
 
    render() {
@@ -76,8 +79,15 @@ class ContainerContent extends React.Component {
                render={() => <CreateNote addNote={this.props.addNote} />}
             />
 
+            <Route
+               path='/tasks'
+               exact
+               render={() => <Tasks
+                  addTask={this.props.addTask}
+                  tasks={this.props.tasks}
+               />}
+            />
          </div>
-
       )
    }
 }
@@ -87,7 +97,8 @@ const mapStateToProps = (state) => (
       notes: state.content.notes,
       importantNotes: state.content.importantNotes,
       groups: state.content.groups,
-      notesView: state.content.notesView
+      notesView: state.content.notesView,
+      tasks: state.tasksState.tasks
    }
 )
 
@@ -102,5 +113,7 @@ export default connect(mapStateToProps,
       changeNotesView,
       delNoteFromGroup,
       renameGroup,
-      changeColor
+      changeColor,
+      addTask,
+      getTasks
    })(ContainerContent);

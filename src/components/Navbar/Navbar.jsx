@@ -1,7 +1,11 @@
 import style from './Navbar.module.scss';
 import { NavLink } from 'react-router-dom';
+import CreateButton from './CreateButton/CreateButton';
+import { Route } from 'react-router-dom';
 
 const Navbar = (props) => {
+
+
    return (
       <>
          <div className={style.wrapper}>
@@ -34,9 +38,27 @@ const Navbar = (props) => {
                   </div>
                </NavLink>
                <NavLink
-                  to="/create">
-                  <button type='submit' className={`${style.addGroup} waves-effect waves-light btn`}>| Добавить<i className={`material-icons left ${style.materialIcon}`}>add</i></button>
+                  to="/tasks"
+                  className={style.navbar_item}
+                  activeClassName={style.navbar_item_active}
+               ><div className={'valign-wrapper'}>
+                     <i className="material-icons prefix">check_box</i><span className={style.navbar_item_span}>Задачи</span>
+                  </div>
                </NavLink>
+               <Route
+                  path={["/all", "/groups", "/important", "/create"]}
+                  exact
+                  component={() => <CreateButton
+                     header={"Добавить заметку"}
+                  />}
+               />
+               <Route
+                  path={"/tasks"}
+                  exact
+                  component={() => <CreateButton
+                     header={"Добавить задачу"}
+                  />}
+               />
             </div>
          </div>
       </>

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import Modal from '../../common/Modal/Modal.jsx';
+import Modal from '../../common/Modals/NoteModal/NoteModal.jsx';
 import style from './Notes.module.scss';
 import '../../../styles/transitions/_card.scss';
 
 
 const Notes = (props) => {
 
-   const [isTransition, setIsTransition] = useState(false);
+   const [isTransition, setIsTransition] = useState(false)
 
    return (
       <>
@@ -15,16 +15,24 @@ const Notes = (props) => {
             <span className={style.breadCrumb_span}> Отображение: </span>
             <button
                onClick={() => props.changeNotesView('cards')}
-               className={`btn-flat  ${style.breadcrumb_item} ${props.notesView === 'cards' ? style.breadcrumb_item_active : ''}`}
+               className={`btn-flat  ${style.breadcrumb_item} ${props.notesView === 'cards'
+                  ? style.breadcrumb_item_active
+                  : ''}`}
             >Карточки</button>
             <span> / </span>
             <button
                onClick={() => props.changeNotesView('list')}
-               className={`btn-flat ${style.breadcrumb_item} ${props.notesView === 'list' ? style.breadcrumb_item_active : ''}`}
+               className={`btn-flat ${style.breadcrumb_item} ${props.notesView === 'list'
+                  ? style.breadcrumb_item_active
+                  : ''}`}
             >Список</button>
          </nav>
-
-
+         {/* Открытие карты */}
+         {/* <button onClick={() => setIsModal(true)}>Открыть карту</button>
+         <MapModal
+            isModal={isModal}
+            setIsModal={setIsModal}
+         /> */}
          {
             props.notes.length === 0 ? <h2 className={style.sad_title}>Нет заметок</h2>
                : (
@@ -62,6 +70,7 @@ const Notes = (props) => {
                   </div >
                )
          }
+
       </>
    )
 }
@@ -72,7 +81,6 @@ const Note = (props) => {
 
    const showModal = (props) => {
       setIsModal(true);
-      console.log(props);
    }
 
    let noteClass = props.noteView === 'list'

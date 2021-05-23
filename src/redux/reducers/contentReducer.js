@@ -38,7 +38,7 @@ const initialState = {
        } */
 
    ],
-   notesView: null
+   notesView: 'cards'
 };
 
 export const contentReducer = (state = initialState, action) => {

@@ -1,9 +1,11 @@
 import { createStore, combineReducers } from 'redux';
 import { contentReducer } from './reducers/contentReducer';
+import { tasksReducer } from './reducers/tasksReducer';
 
 let reducers = combineReducers(
    {
-      content: contentReducer
+      content: contentReducer,
+      tasksState: tasksReducer
    }
 );
 
