@@ -1,0 +1,55 @@
+.wrapper {
+   display: flex;
+   width: 100%;
+   height: 100%;
+}
+
+//Левая часть
+
+.left_side_container {
+   border-right: 2px solid rgba(184, 201, 203, 0.5);
+   width: 55%;
+   height: 90%;
+   display: flex;
+   justify-content: flex-start;
+   flex-direction: column;
+}
+
+.tasksWrapper {
+   display: flex;
+   flex-direction: column;
+   margin-top: 10px;
+   max-height: 700px;
+   max-width: 900px;
+}
+
+//Правая часть
+
+.right_side_container {
+   width: 40%;
+   height: 90%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.illustration_container {
+   display: flex;
+   width: 100%;
+   height: 100%;
+   justify-content: flex-start;
+   align-items: center;
+   flex-direction: column;
+}
+
+.illustration {
+   width: 700px;
+   margin-left: 20px;
+}
+
+.illustration_description {
+   text-align: center;
+   padding-left: 50px;
+   font-size: 25px;
+   color: #e1e4e5;
+}
