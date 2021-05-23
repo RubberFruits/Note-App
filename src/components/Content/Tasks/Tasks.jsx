@@ -12,7 +12,7 @@ const Tasks = (props) => {
                addTask={props.addTask}
             />
             {
-               props.tasks.length > 1
+               props.tasks.length > 0
                && <div className={style.tasksWrapper}>
                   {props.tasks.map((task) => <Task key={task.id} text={task.text} />)}
                </div>
