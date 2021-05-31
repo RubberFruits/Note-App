@@ -1,24 +1,8 @@
 import { useForm } from 'react-hook-form';
-import { useHistory } from "react-router-dom";
 import style from './CreateNote.module.scss';
 import { Tools } from '../../../../utils/tools';
 
 const CreateNote = (props) => {
-
-   return (
-      <div>
-         <h5>Текст заметки</h5>
-         <NoteForm
-            addNote={props.addNote}
-         />
-      </div>
-   )
-}
-
-
-const NoteForm = (props) => {
-
-   const history = useHistory();
 
    const errorHtml = `<span><p className={${style.errorMessage}}>Заполните поле</p></span>`;
 
@@ -36,7 +20,8 @@ const NoteForm = (props) => {
 
    return (
       <form onSubmit={
-         handleSubmit(submittingForm)}>
+         handleSubmit(submittingForm)}
+         className={style.formWrapper}>
          <div className={`input-field ${style.inputClass}`}>
             <i className="material-icons prefix">mode_edit</i>
             <input
@@ -47,7 +32,7 @@ const NoteForm = (props) => {
                id="note"
                type='text'
             />
-            <label htmlFor={'note'}>Ваша заметка</label>
+            <label htmlFor={'note'}>Новая заметка</label>
          </div>
          <div>
             <p>
@@ -62,15 +47,11 @@ const NoteForm = (props) => {
             </p>
          </div>
          {errors.note && Tools.errorHandler(errorHtml)}
-         <div>
-            <button
-               className='btn waves-effect waves-light'
-               type="submit">Подтвердить
-             <i className="material-icons right">check_circle</i>
-            </button>
-            <button className={`btn waves-effect waves-light ${style.exitBtn}`} onClick={() => history.push('/all')}>Отмена
-            <i className="material-icons right">clear</i></button>
-         </div>
+         <button
+            className={`${style.acceptButton} btn waves-effect waves-light`}
+            type="submit">
+            <i className={`material-icons left valign-wrapper ${style.acceptIcon}`}>check_circle</i>
+         </button>
       </form >
    )
 }

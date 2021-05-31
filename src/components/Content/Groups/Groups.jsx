@@ -5,6 +5,7 @@ import AddNoteGroupForm from '../Forms/AddNoteGroupForm/AddNoteGroupForm';
 import GroupNote from './GroupNote/GroupNote';
 import GroupHead from './GroupHead/GroupHead';
 import CreateGroupForm from '../Forms/CreateGroupForm/CreateGroupForm';
+import LeftImageTip from '../../../assets/pictures/tasks_leftSide_tip_picture.svg';
 //libraries
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { ContextMenu, MenuItem, ContextMenuTrigger, SubMenu } from "react-contextmenu";
@@ -13,7 +14,7 @@ import { RiDeleteBin6Line } from 'react-icons/ri';
 import { TwitterPicker } from 'react-color';
 //styles
 import style from './Groups.module.scss';
-import '../../../styles/contextMenu.scss';
+import '../../../styles/contextMenus/contextMenu.scss';
 import '../../../styles/transitions/_formGroup.scss';
 
 const Groups = (props) => {
@@ -68,7 +69,12 @@ const Groups = (props) => {
             addGroup={props.addGroup}
          />
          {
-            !props.groups.length ? <h4>Групп нет</h4>
+            !props.groups.length
+               ?
+               <div className={style.illustration_container}>
+                  <img className={style.illustration} src={LeftImageTip} alt="leftpic" />
+                  <span className={style.illustration_description}>Заметок нет! Добавьте новую прямо сейчас</span>
+               </div>
                :
                props.groups.map(group => (
                   <div

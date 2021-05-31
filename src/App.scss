@@ -10,3 +10,11 @@
   height: 100vh;
   overflow: hidden;
 }
+
+@media (max-width: 767.98px) {
+  .app-wrapper {
+    grid-template-areas:
+      "h h h"
+      "c c c";
+  }
+}

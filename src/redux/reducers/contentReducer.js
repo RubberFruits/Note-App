@@ -78,6 +78,7 @@ export const contentReducer = (state = initialState, action) => {
          }
 
       case GET_FROM_LOCAL_STORE:
+         Tools.addToLocalStoreSetting(JSON.stringify(state.notesView), 'notesView');
          return {
             ...state,
             notes: Tools.getFromLocalStore('notes'),

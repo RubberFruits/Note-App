@@ -19,3 +19,13 @@
    cursor: pointer;
    width: 130px;
 }
+
+@media (max-width: 767.98px) {
+   .header_head {
+      border: 1px solid black;
+      height: 50px;
+      width: 60px;
+      padding-left: 0;
+      margin-left: 70px;
+   }
+}

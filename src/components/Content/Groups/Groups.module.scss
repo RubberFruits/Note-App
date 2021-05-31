@@ -54,3 +54,26 @@
 .containerGroup {
    overflow: hidden;
 }
+
+.illustration_container {
+   display: flex;
+   position: absolute;
+   top: 160px;
+   left: 350px;
+   width: 600px;
+   justify-content: flex-start;
+   align-items: center;
+   flex-direction: column;
+   z-index: 1;
+}
+
+.illustration {
+   opacity: 0.5;
+}
+
+.illustration_description {
+   text-align: center;
+   margin-top: 10px;
+   font-size: 25px;
+   color: #e1e4e5;
+}

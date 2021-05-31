@@ -9,7 +9,11 @@ import {
    changeNotesView, delNoteFromGroup,
    renameGroup, changeColor
 } from '../../redux/reducers/contentReducer';
-import { addTask, getTasks } from '../../redux/reducers/tasksReducer';
+import {
+   addTask, getTasks,
+   toggleTaskCompleteStatus, delTask,
+   setEditedTask, changeTask
+} from '../../redux/reducers/tasksReducer';
 import { Redirect, Route } from 'react-router-dom';
 import '../../styles/_wrapper.scss';
 import '../../styles/transitions/_formGroup.scss'
@@ -83,9 +87,16 @@ class ContainerContent extends React.Component {
                path='/tasks'
                exact
                render={() => <Tasks
-                  addTask={this.props.addTask}
                   tasks={this.props.tasks}
-               />}
+                  completedTasks={this.props.completedTasks}
+                  editedTask={this.props.editedTask}
+                  addTask={this.props.addTask}
+                  delTask={this.props.delTask}
+                  changeTask={this.props.changeTask}
+                  toggleTaskCompleteStatus={this.props.toggleTaskCompleteStatus}
+                  setEditedTask={this.props.setEditedTask}
+               />
+               }
             />
          </div>
       )
@@ -98,22 +109,14 @@ const mapStateToProps = (state) => (
       importantNotes: state.content.importantNotes,
       groups: state.content.groups,
       notesView: state.content.notesView,
-      tasks: state.tasksState.tasks
+      tasks: state.tasksState.tasks,
+      completedTasks: state.tasksState.completedTasks,
+      editedTask: state.tasksState.editedTask
    }
 )
 
 export default connect(mapStateToProps,
    {
-      addNote,
-      getFromLocalStore,
-      delNote,
-      addGroup,
-      addNoteToGroup,
-      delGroup,
-      changeNotesView,
-      delNoteFromGroup,
-      renameGroup,
-      changeColor,
-      addTask,
-      getTasks
+      addNote, getFromLocalStore, delNote, addGroup, addNoteToGroup, delGroup, changeNotesView, delNoteFromGroup,
+      renameGroup, changeColor, addTask, getTasks, toggleTaskCompleteStatus, delTask, setEditedTask, changeTask
    })(ContainerContent);

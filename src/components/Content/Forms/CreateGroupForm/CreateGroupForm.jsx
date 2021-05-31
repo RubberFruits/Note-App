@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import style from './CreateGroupForm.module.scss';
 import { Tools } from '../../../../utils/tools';
+import AcceptButton from '../../../common/Buttons/AcceptButton/AcceptButton';
 
 const CreateGroupForm = (props) => {
    const {
@@ -21,7 +22,7 @@ const CreateGroupForm = (props) => {
       <form
          className={style.groupForm}
          onSubmit={handleSubmit(submittingForm)}>
-         <div className={`input-field s5 inputDiv ${style.inputDiv}`}>
+         <div className={`input-field s5 inputDiv ${style.inputContainer}`}>
             <i className="material-icons prefix">mode_edit</i>
             <input
                {...register('group', {
@@ -32,8 +33,9 @@ const CreateGroupForm = (props) => {
                type="text"
             />
             <label htmlFor={"group"}>Новая группа</label>
-            <button type='submit' className={`${style.addGroup} waves-effect waves-light btn`}>Добавить
-            <i className={`material-icons right ${style.materialIcon}`}>check</i></button>
+            <div className={style.acceptButtonContainer}>
+               <AcceptButton />
+            </div>
          </div>
          {errors.group && Tools.errorHandler(errorHtml)}
       </form>

@@ -3,6 +3,8 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Modal from '../../common/Modals/NoteModal/NoteModal.jsx';
 import style from './Notes.module.scss';
 import '../../../styles/transitions/_card.scss';
+import CreateNote from '../Forms/CreateNote/CreateNote.jsx';
+import LeftImageTip from '../../../assets/pictures/tasks_leftSide_tip_picture.svg';
 
 
 const Notes = (props) => {
@@ -11,30 +13,38 @@ const Notes = (props) => {
 
    return (
       <>
+         <CreateNote addNote={props.addNote} />
          <nav className={`${style.breadcrumbContainer} valign-wrapper`}>
             <span className={style.breadCrumb_span}> Отображение: </span>
             <button
-               onClick={() => props.changeNotesView('cards')}
+               onClick={(e) => {
+                  e.stopPropagation();
+                  props.changeNotesView('cards')
+               }}
                className={`btn-flat  ${style.breadcrumb_item} ${props.notesView === 'cards'
                   ? style.breadcrumb_item_active
                   : ''}`}
             >Карточки</button>
             <span> / </span>
             <button
-               onClick={() => props.changeNotesView('list')}
+               onClick={(e) => {
+                  e.stopPropagation();
+                  props.changeNotesView('list')
+               }}
                className={`btn-flat ${style.breadcrumb_item} ${props.notesView === 'list'
                   ? style.breadcrumb_item_active
                   : ''}`}
             >Список</button>
          </nav>
-         {/* Открытие карты */}
-         {/* <button onClick={() => setIsModal(true)}>Открыть карту</button>
-         <MapModal
-            isModal={isModal}
-            setIsModal={setIsModal}
-         /> */}
+
+
+
          {
-            props.notes.length === 0 ? <h2 className={style.sad_title}>Нет заметок</h2>
+            props.notes.length === 0
+               ? <div className={style.illustrationContainer}>
+                  <img className={style.illustration} src={LeftImageTip} alt="leftpic" />
+                  <span className={style.illustation_description}>Заметок нет! Добавьте новую прямо сейчас</span>
+               </div>
                : (
                   <div className={style.wrapper}>
                      <div className={style.content}>
@@ -108,7 +118,7 @@ const Note = (props) => {
       <>
          <div
             onClick={() => showModal(props)}
-            className={`${noteClass} z-depth-2`}>
+            className={`valign-wrapper ${noteClass}`}>
             <h4 className={props.noteView === 'cards' ? style.noteText : style.noteTextList}
             >{renderSwitch(props.noteView)}</h4>
             <p className={props.noteView === 'cards' ? style.noteDate : style.noteDateList}>{props.date}</p>

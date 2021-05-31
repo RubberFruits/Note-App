@@ -1,34 +1,39 @@
 import style from './Navbar.module.scss';
 import { NavLink } from 'react-router-dom';
-import CreateButton from './CreateButton/CreateButton';
 import { Route } from 'react-router-dom';
+import { BsArrowReturnRight } from "react-icons/bs";
+import Sizer from '../common/Sizer/Sizer';
 
 const Navbar = (props) => {
-
 
    return (
       <>
          <div className={style.wrapper}>
             <div className={style.navbar}>
-
                <NavLink
                   to="/all"
                   className={` ${style.navbar_item}`}
                   activeClassName={style.navbar_item_active}
-
                ><div className={' valign-wrapper'}>
-                     <i className="material-icons prefix">library_books</i><span className={style.navbar_item_span}>Все заметки</span>
+                     <i className="material-icons prefix">library_books</i><span className={style.navbar_item_span}>Заметки</span>
                   </div>
                </NavLink>
-               <NavLink
-                  to="/important"
-                  className={style.navbar_item}
-                  activeClassName={style.navbar_item_active}
-               >
-                  <div className={' valign-wrapper'}>
-                     <i className="material-icons prefix">priority_high</i><span className={style.navbar_item_span}>C пометкой "Важное"</span>
-                  </div>
-               </NavLink>
+               <Route
+                  path={["/all", "/important"]}
+                  exact
+                  component={() =>
+                     <NavLink
+                        to="/important"
+                        className={style.navbar_item_small}
+                        activeClassName={style.navbar_item_active}
+                     >
+                        <BsArrowReturnRight className={style.navbarContext_icon} />
+                        <div className={' valign-wrapper'}>
+                           <span className={style.navbar_item_span}>C пометкой "Важное"</span><i className={`material-icons prefix ${style.navbar_item_icon}`}>priority_high</i>
+                        </div>
+                     </NavLink>
+                  }
+               />
                <NavLink
                   to="/groups"
                   className={style.navbar_item}
@@ -45,20 +50,7 @@ const Navbar = (props) => {
                      <i className="material-icons prefix">check_box</i><span className={style.navbar_item_span}>Задачи</span>
                   </div>
                </NavLink>
-               <Route
-                  path={["/all", "/groups", "/important", "/create"]}
-                  exact
-                  component={() => <CreateButton
-                     header={"Добавить заметку"}
-                  />}
-               />
-               <Route
-                  path={"/tasks"}
-                  exact
-                  component={() => <CreateButton
-                     header={"Добавить задачу"}
-                  />}
-               />
+               <Sizer />
             </div>
          </div>
       </>

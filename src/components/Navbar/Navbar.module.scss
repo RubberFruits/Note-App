@@ -11,7 +11,6 @@
 .navbar_item {
    font-weight: 700;
    display: block;
-
    margin-bottom: 20px;
    padding-right: 5px;
    padding-top: 5px;
@@ -38,4 +37,35 @@
 
 .navbar_item_span {
    margin-left: 5px;
+}
+
+.navbar_item_small {
+   @extend .navbar_item;
+   display: flex;
+   font-size: 14px;
+   width: 220px;
+}
+
+.navbar_item_icon {
+   margin-left: 5px;
+   color: #e57373;
+}
+
+.navbarContext_container:hover > .navbar_item_small {
+   color: white;
+}
+
+.navbarContext_icon {
+   font-size: 25px;
+   height: 30px;
+}
+
+.sizer {
+   width: 350px;
+}
+
+@media (max-width: 767.98px) {
+   .wrapper {
+      display: none;
+   }
 }

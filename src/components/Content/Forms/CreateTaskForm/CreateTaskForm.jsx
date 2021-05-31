@@ -34,10 +34,9 @@ const CreateTaskForm = (props) => {
             />
             <label htmlFor={"task"}>Новая задача</label>
             <button
-               type='submit'
-               className={` btn-middle ${style.addTask}`}
-            >
-               <span className={style.addButtonText}>+</span>
+               className={`${style.acceptButton} btn waves-effect waves-light`}
+               type="submit">
+               <i className={`material-icons left valign-wrapper ${style.acceptIcon}`}>check_circle</i>
             </button>
          </div>
          {errors.group && Tools.errorHandler(errorHtml)}
