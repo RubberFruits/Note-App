@@ -2,13 +2,14 @@ import style from './Navbar.module.scss';
 import { NavLink } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { BsArrowReturnRight } from "react-icons/bs";
-import Sizer from '../common/Sizer/Sizer';
 
 const Navbar = (props) => {
 
    return (
       <>
-         <div className={style.wrapper}>
+         <div className={`${style.wrapper} 
+         ${props.flagForMobileNavbar && style.mobile_wrapper_offline}
+         ${props.flagForMobileNavbar ? style.mobile_wrapper_online : ''}`}>
             <div className={style.navbar}>
                <NavLink
                   to="/all"
@@ -50,7 +51,6 @@ const Navbar = (props) => {
                      <i className="material-icons prefix">check_box</i><span className={style.navbar_item_span}>Задачи</span>
                   </div>
                </NavLink>
-               <Sizer />
             </div>
          </div>
       </>

@@ -201,7 +201,6 @@
 
 .delete_btn_list {
    @extend .delete_btn;
-   border: 1px solid black;
    border-radius: 8px;
    top: 5px;
    right: 10px;
@@ -232,21 +231,60 @@
 
 @media (max-width: 768px) {
    .breadcrumbContainer {
-      right: 10px;
+      right: 5px;
+      top: 8px;
+      width: 220px;
+      height: 35px;
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Chrome/Safari/Opera */
+      -khtml-user-select: none; /* Konqueror */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none;
    }
+
+   .breadcrumb_item {
+      margin: 0;
+   }
+
+   .breadCrumb_span {
+      display: none;
+   }
+
+   .cards_wrapper {
+      width: 100vw;
+   }
+
+   .card {
+      width: 350px;
+   }
+
+   .list_item {
+      width: 350px;
+      background: #5f9ca1;
+      color: white;
+   }
+
    .illustration {
       position: absolute;
-      left: 100px;
+      left: 0px;
       top: 200px;
-      width: 600px;
+      width: 380px;
       transition: all 0.2s ease;
    }
 
    .illustation_description {
       position: absolute;
-      left: 150px;
-      bottom: 440px;
+      display: block;
+      left: 0px;
+      top: 380px;
       transition: all 0.2s ease;
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Chrome/Safari/Opera */
+      -khtml-user-select: none; /* Konqueror */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none;
    }
 }
 

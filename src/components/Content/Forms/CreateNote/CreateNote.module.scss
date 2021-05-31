@@ -58,8 +58,22 @@
 }
 @media (max-width: 767.98px) {
    .formWrapper {
-      width: 95%;
+      width: 90%;
+      height: 120px;
       margin-right: 20px;
+      margin-left: 0 !important;
+      z-index: 9 !important;
+   }
+
+   .inputClass {
+      width: 70%;
+   }
+
+   .input_label {
+      z-index: 10 !important;
+   }
+   .acceptButton {
+      right: 3%;
    }
 }
 

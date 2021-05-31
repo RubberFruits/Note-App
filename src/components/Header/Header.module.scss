@@ -7,6 +7,10 @@
    display: block;
 }
 
+.burger_menu {
+   display: none;
+}
+
 .header_head {
    display: block;
    font-size: 26px;
@@ -21,11 +25,31 @@
 }
 
 @media (max-width: 767.98px) {
+   .header {
+      display: flex;
+   }
    .header_head {
-      border: 1px solid black;
       height: 50px;
-      width: 60px;
+      width: 115px;
       padding-left: 0;
-      margin-left: 70px;
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Chrome/Safari/Opera */
+      -khtml-user-select: none; /* Konqueror */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none;
+   }
+   .burger_menu {
+      display: block;
+      color: white;
+      font-size: 40px;
+      width: 50px;
+      margin: 5px 0 0 5px;
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Chrome/Safari/Opera */
+      -khtml-user-select: none; /* Konqueror */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none;
    }
 }

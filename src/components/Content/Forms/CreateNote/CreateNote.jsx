@@ -32,7 +32,7 @@ const CreateNote = (props) => {
                id="note"
                type='text'
             />
-            <label htmlFor={'note'}>Новая заметка</label>
+            <label className={style.input_label} htmlFor={'note'}>Новая заметка</label>
          </div>
          <div>
             <p>
@@ -52,7 +52,7 @@ const CreateNote = (props) => {
             type="submit">
             <i className={`material-icons left valign-wrapper ${style.acceptIcon}`}>check_circle</i>
          </button>
-      </form >
+      </form>
    )
 }
 

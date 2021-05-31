@@ -36,9 +36,6 @@ const Notes = (props) => {
                   : ''}`}
             >Список</button>
          </nav>
-
-
-
          {
             props.notes.length === 0
                ? <div className={style.illustrationContainer}>
