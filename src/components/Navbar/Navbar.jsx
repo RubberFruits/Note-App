@@ -8,7 +8,7 @@ const Navbar = (props) => {
    return (
       <>
          <div className={`${style.wrapper} 
-         ${props.flagForMobileNavbar && style.mobile_wrapper_offline}
+         ${document.body.clientWidth < 768 ? style.mobile_wrapper_offline : ''}
          ${props.flagForMobileNavbar ? style.mobile_wrapper_online : ''}`}>
             <div className={style.navbar}>
                <NavLink

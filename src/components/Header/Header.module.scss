@@ -28,10 +28,16 @@
    .header {
       display: flex;
    }
+   .mobileNavbar {
+      position: absolute;
+      top: 50px;
+      left: 0;
+   }
    .header_head {
       height: 50px;
-      width: 115px;
+      width: 130px;
       padding-left: 0;
+      line-height: 50px;
       -webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none; /* Chrome/Safari/Opera */
       -khtml-user-select: none; /* Konqueror */
@@ -45,6 +51,7 @@
       font-size: 40px;
       width: 50px;
       margin: 5px 0 0 5px;
+
       -webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none; /* Chrome/Safari/Opera */
       -khtml-user-select: none; /* Konqueror */

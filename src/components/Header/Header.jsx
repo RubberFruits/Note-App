@@ -9,20 +9,23 @@ const Header = (props) => {
    const history = useHistory();
 
    return (
-      <div className={style.header}>
-         <i
-            onClick={() => setIsMobileNavbar(!isMobileNavbar)}
-            className={`material-icons ${style.burger_menu}`}>menu</i>
-         <h1
-            onClick={() => history.push('/all')}
-            className={style.header_head}
-         >Note App</h1>
+      <>
+         <div className={style.header}>
+            <i
+               onClick={() => setIsMobileNavbar(!isMobileNavbar)}
+               className={`material-icons ${style.burger_menu}`}>menu</i>
+            <h1
+               onClick={() => history.push('/all')}
+               className={style.header_head}
+            >Note App</h1>
+         </div>
+
          {document.body.clientWidth <= 768 && isMobileNavbar
             && <div className={style.mobileNavbar}>
                <Navbar flagForMobileNavbar={isMobileNavbar} />
             </div>
          }
-      </div>
+      </>
    )
 }
 
