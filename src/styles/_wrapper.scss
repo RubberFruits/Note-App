@@ -6,11 +6,13 @@
    padding: 0;
    width: 87vw;
    overflow: hidden;
+   overflow-x: hidden;
 }
 
 @media (max-width: 768px) {
    .wrapper {
       width: 100vw;
-      overflow: auto;
+      height: max-content;
+      overflow-x: hidden;
    }
 }

@@ -7,8 +7,8 @@
     "n c c";
   grid-template-rows: 50px 1fr;
   grid-template-columns: 250px 10fr;
-  height: 100vh;
   overflow: hidden;
+  height: 100vh;
 }
 
 @media (max-width: 767.98px) {
@@ -16,6 +16,8 @@
     grid-template-areas:
       "h h h"
       "c c c";
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: visible;
+    height: 100vh;
   }
 }

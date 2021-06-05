@@ -15,7 +15,7 @@ function App() {
       <Provider store={store}>
         <div className="app-wrapper">
           <Header />
-          <Navbar />
+          {document.body.clientWidth >= 769 ? <Navbar /> : ''}
           <ContainerContent />
         </div>
       </Provider>

@@ -7,10 +7,10 @@ const Navbar = (props) => {
 
    return (
       <>
-         <div className={`${style.wrapper} 
-         ${document.body.clientWidth < 768 ? style.mobile_wrapper_offline : ''}
-         ${props.flagForMobileNavbar ? style.mobile_wrapper_online : ''}`}>
-            <div className={style.navbar}>
+         <div className={`${style.wrapper} `}>
+            <div className={`${document.body.clientWidth >= 768 ? style.navbar : ''} 
+            ${style.mobile_wrapper_offline} 
+   ${props.flagForMobileNavbar ? style.mobile_wrapper_online : ''}`}>
                <NavLink
                   to="/all"
                   className={` ${style.navbar_item}`}
@@ -53,6 +53,7 @@ const Navbar = (props) => {
                </NavLink>
             </div>
          </div>
+
       </>
    )
 }

@@ -19,8 +19,7 @@ const Header = (props) => {
                className={style.header_head}
             >Note App</h1>
          </div>
-
-         {document.body.clientWidth <= 768 && isMobileNavbar
+         {document.body.clientWidth <= 768
             && <div className={style.mobileNavbar}>
                <Navbar flagForMobileNavbar={isMobileNavbar} />
             </div>
