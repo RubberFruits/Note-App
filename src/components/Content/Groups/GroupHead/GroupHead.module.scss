@@ -18,6 +18,12 @@
    margin-bottom: 10px;
    min-height: 100px;
    z-index: 95;
+   -webkit-touch-callout: none; /* iOS Safari */
+   -webkit-user-select: none; /* Chrome/Safari/Opera */
+   -khtml-user-select: none; /* Konqueror */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+   user-select: none;
 
    &:hover {
       transform: scale(1.1);

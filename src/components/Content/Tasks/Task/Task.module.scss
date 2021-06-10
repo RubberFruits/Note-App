@@ -1,3 +1,7 @@
+.wrapper {
+   height: 100%;
+}
+
 .task {
    width: 100% !important;
    height: 50px !important;
@@ -46,4 +50,10 @@
 
 .react-context {
    all: none !important;
+}
+
+@media (max-width: 1100px) {
+   .task {
+      width: 95% !important;
+   }
 }

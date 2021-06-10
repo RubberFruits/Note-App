@@ -20,3 +20,21 @@
       box-shadow: none;
    }
 }
+
+@media (max-width: 1450px) {
+   .acceptButton {
+      width: 50px;
+      height: 50px;
+   }
+
+   .acceptIcon {
+      width: 40px;
+      height: 40px;
+      padding-left: 0%;
+      font-size: 50px !important;
+      &:hover {
+         transform: scale(1.2);
+         box-shadow: none;
+      }
+   }
+}

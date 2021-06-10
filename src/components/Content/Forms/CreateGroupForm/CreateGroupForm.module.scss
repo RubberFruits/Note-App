@@ -22,9 +22,44 @@
    margin-top: 10px;
    margin-left: 30px;
    background-color: #22ac98;
+   border: 1px solid black;
    width: 200px;
    & .materialIcon:hover {
       transition: all 0.3s ease;
       transform: scale(1.5);
+   }
+}
+
+@media (max-width: 1890px) {
+   .groupForm {
+      width: 35vw;
+   }
+}
+
+@media (max-width: 1655px) {
+   .groupForm {
+      width: 30vw;
+   }
+
+   .acceptButtonContainer {
+      position: absolute;
+      top: -1%;
+      right: -30%;
+   }
+
+   .inputContainer {
+      width: 75%;
+   }
+}
+
+@media (max-width: 1655px) {
+   .groupForm {
+      width: 32vw;
+   }
+}
+
+@media (max-width: 768px) {
+   .groupForm {
+      width: 90vw;
    }
 }

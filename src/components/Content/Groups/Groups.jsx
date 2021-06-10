@@ -126,11 +126,10 @@ const Groups = (props) => {
                      {/* Показ нот  */}
 
                      <TransitionGroup
-                        className={style.cards_wrapper}
+                        className={style.cards_wrapperZ}
                      >
                         {showingGroupId.includes(group.id)
-                           ?
-                           group.groupNotes.map(note => (
+                           ? group.groupNotes.map(note => (
                               <CSSTransition
                                  timeout={300}
                                  classNames="card"

@@ -1,11 +1,11 @@
 @import "../../../styles/variables.scss";
 
 .addGroupContainer {
-   border: 5px solid #e2dec7;
    padding: 10px;
    margin-top: 20px;
    width: 600px;
    border-radius: 20px;
+   border: 5px solid #e2dec7;
    transition: all 0.5s ease;
 }
 
@@ -28,7 +28,7 @@
    right: 200px;
 }
 
-.cards_wrapper {
+.cards_wrapperZ {
    display: flex;
    position: absolute;
    top: 100px;
@@ -49,10 +49,6 @@
    top: 80px;
    width: 2px;
    border: 1px solid rgba(184, 201, 203, 0.5);
-}
-
-.containerGroup {
-   overflow: hidden;
 }
 
 .illustration_container {
@@ -76,4 +72,113 @@
    margin-top: 10px;
    font-size: 25px;
    color: #e1e4e5;
+}
+
+@media (max-width: 1890px) {
+   .illustration_container {
+      position: absolute;
+      top: 30%;
+      width: 400px;
+   }
+
+   .illustration {
+      width: 500px;
+   }
+
+   .addGroupContainer {
+      max-width: 30vw;
+   }
+}
+
+@media (max-width: 1650px) {
+   .cards_wrapperZ {
+      right: 2%;
+   }
+}
+
+@media (max-width: 1520px) {
+   .cards_wrapperZ {
+      left: 60%;
+      justify-content: center;
+      width: 35vw;
+   }
+}
+
+@media (max-width: 1450px) {
+   .containerGroup::after {
+      left: calc(58% + 10px);
+   }
+
+   .illustration_container {
+      position: absolute;
+      top: 30%;
+      left: 35%;
+      width: 32vw;
+   }
+
+   .illustration {
+      width: 46vw;
+   }
+
+   .illustration_description {
+      font-size: 20px;
+   }
+}
+
+@media (max-width: 1100px) {
+   .containerGroup::after {
+      display: none;
+   }
+}
+
+@media (max-width: 1000px) {
+   .cards_wrapperZ {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      width: 36vw;
+      left: 64%;
+   }
+}
+
+@media (max-width: 850px) {
+   .cards_wrapperZ {
+      left: 70%;
+   }
+}
+
+@media (max-width: 768px) {
+   .illustration_container {
+      position: absolute;
+      top: 30%;
+      left: 25%;
+      width: 52vw;
+   }
+
+   .illustration {
+      width: 86vw;
+   }
+
+   .illustration_description {
+      font-size: 2rem;
+   }
+
+   .addGroupContainer {
+      max-width: 47vw;
+   }
+
+   .cards_wrapperZ {
+      position: relative;
+      top: -150px;
+      left: 54%;
+      width: 47vw;
+      height: 100%;
+      border-radius: 20px;
+      transition: all 0.5s ease;
+   }
+
+   .containerGroup {
+      position: relative;
+      height: fit-content;
+      min-height: fit-content;
+   }
 }

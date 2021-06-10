@@ -21,8 +21,9 @@ const AddNoteGroupForm = (props) => {
 
    return (
 
-      <form onSubmit={
-         handleSubmit(submittingForm)}>
+      <form
+         onSubmit={handleSubmit(submittingForm)}
+         className={style.formWrapper}>
          <div className={`input-field s5 inputDiv ${style.inputDiv}`}>
             <input
                {...register("header", {
@@ -55,9 +56,9 @@ const AddNoteGroupForm = (props) => {
             />
          </div> */}
          {errors.note && Tools.errorHandler(errorHtml)}
-         <div>
+         <div className={style.buttonsContainer}>
             <button
-               className='btn waves-effect waves-light'
+               className={`btn waves-effect waves-light ${style.okayBtn}`}
                type="submit">Подтвердить
              <i className="material-icons right">check_circle</i>
             </button>

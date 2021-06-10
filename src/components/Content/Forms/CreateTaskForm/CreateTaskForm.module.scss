@@ -1,6 +1,5 @@
 .groupForm {
    height: 100px;
-
    max-width: 900px;
    border: 3px solid #e2dec7;
    border-radius: 20px;
@@ -8,7 +7,7 @@
 }
 
 .inputDiv {
-   width: 770px;
+   width: 86%;
    position: relative;
 }
 
@@ -70,4 +69,38 @@
    top: 20px;
    left: 100px;
    background-color: #fd0302;
+}
+
+@media (max-width: 1100px) {
+   .groupForm {
+      width: 35vw;
+   }
+}
+
+@media (max-width: 768px) {
+   .inputDiv {
+      width: 80%;
+   }
+   .groupForm {
+      width: 53vw;
+   }
+   .acceptButton {
+      position: absolute;
+      left: 38vw;
+      top: 1vw;
+      width: 40px;
+      height: 40px;
+   }
+   .acceptIcon {
+      width: 70px;
+      height: 70px;
+      font-size: 40px !important;
+      padding-bottom: 28px;
+      padding-left: 0;
+      line-height: 20px;
+      &:hover {
+         transform: scale(1.2);
+         box-shadow: none;
+      }
+   }
 }
