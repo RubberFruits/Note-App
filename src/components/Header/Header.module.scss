@@ -4,7 +4,8 @@
    padding: 0;
    height: 50px;
    grid-area: h;
-   display: block;
+   display: flex;
+   justify-content: space-between;
 }
 
 .burger_menu {
@@ -18,10 +19,31 @@
    color: white;
    font-weight: 300;
    margin: 0;
+   margin-right:auto;
    padding-left: 20px;
    font-family: "Manrope";
    cursor: pointer;
    width: 130px;
+}
+
+.user_container{
+   display: flex;
+}
+
+.user_email{
+   display: inline-block;
+   color:white;
+   font-weight:bold;
+}
+.logout_btn{
+   border-radius: 10px;
+   background-color:#e57373;
+   transition:0.2s all ease;
+   margin-top:5px;
+   &:hover{
+      background-color:#e57373;
+      transform: scale(1.2);
+   }
 }
 
 @media (max-width: 767.98px) {

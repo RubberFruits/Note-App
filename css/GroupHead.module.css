@@ -1,0 +1,134 @@
+@media (min-width: 576px) {
+  /*  */
+}
+
+@media (min-width: 768px) {
+  /*  */
+}
+
+@media (min-width: 992px) {
+  /*  */
+}
+
+@media (min-width: 1200px) {
+  /*  */
+}
+
+@media (min-width: 1400px) {
+  /*  */
+}
+
+.group {
+  display: block;
+  position: relative;
+  width: 200px;
+  max-width: 200px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 10px;
+  border-radius: 8px;
+  margin-left: 10px;
+  margin-top: 10px;
+  cursor: context-menu;
+  font-size: 25px;
+  color: white;
+  /* background-color: #5f9ea0; */
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+  min-height: 100px;
+  z-index: 95;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+.group:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  color: white;
+  -webkit-box-shadow: 1px 3px 28px -15px #bcbebd;
+          box-shadow: 1px 3px 28px -15px #bcbebd;
+}
+
+.group_length {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 17px;
+}
+
+.groupText {
+  display: inline-block;
+  width: 170px;
+  font-size: 20px;
+  white-space: pre-wrap;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.addNoteToGroup {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  height: 30px;
+  width: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  vertical-align: middle;
+  line-height: 20px;
+  background-color: #22ac98;
+}
+
+.addNoteToGroup:hover {
+  background-color: white;
+  color: black;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.addNoteToGroup:active {
+  background-color: #207b73;
+}
+
+.addIcon {
+  color: black;
+}
+
+.addIcon:hover {
+  color: black;
+}
+
+.delGroupButton {
+  position: absolute;
+  vertical-align: middle;
+  height: 30px;
+  font-size: 10px;
+  line-height: 20px;
+  width: 30px;
+  right: 5px;
+  top: 5px;
+  background-color: #e57373;
+  color: white;
+  font-weight: bold;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.delGroupButton:hover {
+  background-color: white;
+  color: black;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.delGroupButton:active {
+  background-color: #207b73;
+}

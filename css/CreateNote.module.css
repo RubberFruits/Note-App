@@ -1,0 +1,85 @@
+.formWrapper {
+  border: 3px solid #e2dec7;
+  border-radius: 20px;
+  width: 37vw;
+  position: relative;
+  padding-left: 20px;
+  height: 120px;
+}
+
+.inputClass {
+  width: 82%;
+}
+
+.acceptButton {
+  position: absolute;
+  top: 20%;
+  right: 1%;
+  width: 70px;
+  height: 70px;
+  padding: 0px !important;
+  border-radius: 50%;
+}
+
+.acceptButton:active {
+  color: #24a599;
+  background-color: white;
+}
+
+.acceptIcon {
+  width: 70px;
+  height: 70px;
+  padding-left: 8%;
+  font-size: 60px !important;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.acceptIcon:hover {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.exitBtn {
+  margin-left: 10px;
+  background-color: #ed6d75;
+}
+
+.exitBtn:hover {
+  background-color: #fd0302;
+}
+
+.errorMessage {
+  position: absolute;
+  top: 20px;
+  left: 100px;
+  background-color: #fd0302;
+}
+
+@media (max-width: 995px) {
+  .formWrapper {
+    width: 75%;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .formWrapper {
+    width: 90%;
+    height: 120px;
+    margin-right: 20px;
+    margin-left: 0 !important;
+    z-index: 9 !important;
+  }
+  .inputClass {
+    width: 70%;
+  }
+  .input_label {
+    z-index: 10 !important;
+  }
+  .acceptButton {
+    right: 3%;
+  }
+}

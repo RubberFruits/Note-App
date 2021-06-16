@@ -19,6 +19,10 @@
    height: 70px;
    padding: 0px !important;
    border-radius: 50%;
+   &:active {
+      color: #24a599;
+      background-color: white;
+   }
 }
 
 .acceptIcon {

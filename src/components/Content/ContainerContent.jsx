@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import Notes from './Notes/Notes';
-import CreateNote from './Forms/CreateNote/CreateNote';
 import {
    addNote, getFromLocalStore,
    delNote, addGroup,
@@ -14,7 +13,7 @@ import {
    toggleTaskCompleteStatus, delTask,
    setEditedTask, changeTask
 } from '../../redux/reducers/tasksReducer';
-import { Redirect, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import '../../styles/_wrapper.scss';
 import '../../styles/transitions/_formGroup.scss'
 import Groups from './Groups/Groups';
@@ -28,13 +27,7 @@ class ContainerContent extends React.Component {
 
    render() {
       return (
-
          <div className={'wrapper'}>
-            <Route
-               path='/'
-               exact
-               render={() => { return <Redirect to='/all' /> }}
-            />
             <Route
                path='/all'
                exact
@@ -77,12 +70,6 @@ class ContainerContent extends React.Component {
                   />
                )}
             />
-            <Route
-               path='/create'
-               exact
-               render={() => <CreateNote addNote={this.props.addNote} />}
-            />
-
             <Route
                path='/tasks'
                exact

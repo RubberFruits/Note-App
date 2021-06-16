@@ -1,0 +1,22 @@
+.app-wrapper {
+  display: -ms-grid;
+  display: grid;
+  margin: 0 auto;
+  padding: 0;
+      grid-template-areas: "h h h" "n c c";
+  -ms-grid-rows: 50px 1fr;
+      grid-template-rows: 50px 1fr;
+  -ms-grid-columns: 250px 10fr;
+      grid-template-columns: 250px 10fr;
+  overflow: hidden;
+  height: 100vh;
+}
+
+@media (max-width: 767.98px) {
+  .app-wrapper {
+        grid-template-areas: "h h h" "c c c";
+    overflow-x: hidden;
+    overflow-y: visible;
+    height: 100vh;
+  }
+}

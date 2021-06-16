@@ -77,7 +77,6 @@ const Notes = (props) => {
                   </div >
                )
          }
-
       </>
    )
 }

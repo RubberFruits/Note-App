@@ -233,9 +233,9 @@
 
 @media (max-width: 768px) {
    .breadcrumbContainer {
-      right: 5px;
+      left: 28%;
       top: 8px;
-      width: 220px;
+      width: 30%;
       height: 35px;
       -webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none; /* Chrome/Safari/Opera */
@@ -291,10 +291,6 @@
    }
 }
 
-// X-Large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-}
-
-// XX-Large devices (larger desktops, 1400px and up)
-@media (min-width: 1400px) {
+@media (max-width: 700px) {
+   
 }

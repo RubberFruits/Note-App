@@ -1,0 +1,85 @@
+.signUp_container {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  font-family: "Manrope";
+  font-weight: bold;
+}
+
+.signUp_form_wrapper {
+  width: 23%;
+  height: 55%;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.formWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+.form_header {
+  margin: 0 auto;
+  margin-top: 20px;
+  font-weight: 600;
+  font-family: "Manrope";
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.signUp_input,
+.password_input,
+.signUp_button {
+  width: 85%;
+  margin-left: 30px;
+}
+
+.buttonContainer {
+  border-bottom: 2px solid #e1e4e5;
+  height: 20%;
+}
+
+.signUp_button {
+  height: 60%;
+  font-size: 25px;
+  margin-top: 10px;
+  text-transform: none !important;
+  font-family: "Manrope";
+  border-radius: 7px;
+}
+
+.enter_description {
+  margin-left: 25%;
+}
+
+.enter_button {
+  all: unset;
+  margin-left: 2%;
+  cursor: pointer;
+  color: blue;
+}
+
+.enter_button:focus {
+  background-color: white;
+}

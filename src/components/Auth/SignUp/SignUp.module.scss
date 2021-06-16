@@ -1,0 +1,154 @@
+.signUp_container {
+   position: absolute;
+   display: flex;
+   justify-content: center;
+   height: 100%;
+   width: 100%;
+   top: 0;
+   left: 0;
+   background-image: url(../../../assets/pictures/login_background.svg);
+   background-repeat: no-repeat;
+   background-size:cover;
+   z-index: 1000;
+   font-family: "Manrope";
+   font-weight: bold;
+}
+
+.signUp_form_wrapper {
+   width: 23%;
+   height: 50%;
+   background-color: white;
+   margin-top:2%;
+   border-radius: 20px;
+   border:5px solid #e2dec7;
+}
+
+.login_form_wrapper{
+   @extend .signUp_form_wrapper;
+   width: 23%;
+   height:40%;
+}
+
+.formWrapper {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+}
+
+.form_header {
+   margin: 0 auto;
+   margin-top: 20px;
+   font-weight: 600;
+   font-family: "Manrope";
+   user-select: none;
+}
+
+.signUp_input,
+.password_input,
+.signUp_button {
+   width: 85%;
+   margin-left: 30px;
+}
+
+.buttonContainer {
+   border-bottom: 2px solid #e1e4e5;
+   height: 20%;
+}
+
+.signUp_button {
+   height: 60%;
+   font-size: 25px;
+   margin-top: 10px;
+   text-transform: none !important;
+   font-family: "Manrope";
+   border-radius: 7px;
+}
+
+.enter_description {
+   margin-left: 25%;
+}
+
+.enter_button {
+   margin-left: 2%;
+   cursor: pointer;
+
+   &:focus {
+      background-color: white;
+   }
+}
+
+@media (max-width: 1900px) {
+   .enter_description {
+      margin-left:20%;
+   }
+}
+@media (max-width: 1640px) {
+   .enter_description {
+      margin-left:15%;
+   }
+}
+
+@media (max-width: 1500px) {
+   .enter_description {
+      margin-left:10%;
+   }
+   .signUp_button{
+      font-size:1rem;
+   }
+}
+
+@media (max-width: 1260px) {
+
+   .login_form_wrapper
+   {
+      width:30vw;
+      height:40%;
+   }
+   .signUp_form_wrapper{
+      width:35vw;
+   }
+   .signUp_button{
+      font-size:1.5rem;
+   }
+   .enter_description {
+      font-size:13px;
+      margin-left:4rem;
+      width:75%;
+   }
+   .signUp_input,
+   .password_input,
+   .signUp_button {
+      width:80%;
+      margin-left:10%;
+   }
+   .form_header {
+   font-size:2rem;
+   }
+}
+
+@media (max-width: 1005px) {
+   .enter_description {
+      width:80%;
+      margin-left:1.5rem;
+      font-size:1rem;
+   }
+   .signUp_form_wrapper{
+      width:45vw;
+   }
+}
+
+@media (max-width: 768px) {
+   .signUp_form_wrapper{
+      width:80vw;
+      height:55vh;
+   }
+   .login_form_wrapper{
+      width:75vw;
+      height:45vh;
+   }
+   
+   .enter_description {
+      font-size:1.4rem;
+      width:95%;
+   }
+}

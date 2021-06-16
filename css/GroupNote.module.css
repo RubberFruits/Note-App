@@ -1,0 +1,106 @@
+.card {
+  position: relative;
+  margin-right: 15px;
+  margin-top: 10px;
+  /* width: calc(15% - 10px); */
+  width: 310px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: left;
+  border-radius: 15px;
+  background: #5f9ca1;
+  color: white;
+  min-height: 150px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.noteHeader {
+  display: inline-block;
+  width: 220px;
+  font-size: 25px;
+  font-weight: bold;
+  white-space: normal;
+  margin-bottom: 70px;
+  margin-left: 10px;
+  max-height: -webkit-max-content;
+  max-height: -moz-max-content;
+  max-height: max-content;
+  height: 20px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.noteText {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 17px;
+  font-weight: 100;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.delete_btn {
+  position: absolute;
+  top: 22px;
+  right: 13px;
+  background-color: white;
+  border-radius: 50%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30px;
+  color: black;
+  font-size: 12px;
+  font-weight: 700;
+  height: 30px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.delete_btn:hover {
+  background-color: white;
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+@media (max-width: 1000px) {
+  .card {
+    width: 150px;
+    min-height: 50px;
+  }
+  .noteHeader {
+    max-width: 90px;
+    font-size: 18px;
+    overflow: hidden;
+  }
+  .noteText {
+    max-width: 130px;
+  }
+  .delete_btn {
+    top: 6%;
+    right: 6%;
+  }
+  .delete_btn:hover {
+    background-color: white;
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+}

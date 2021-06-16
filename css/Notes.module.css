@@ -1,0 +1,341 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wrapper {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin-top: 24px;
+  background-color: white;
+}
+
+.content {
+  grid-area: c;
+  padding: 0;
+  width: 87vw;
+  max-height: -webkit-max-content;
+  max-height: -moz-max-content;
+  max-height: max-content;
+}
+
+.breadcrumbContainer {
+  position: absolute;
+  top: 5px;
+  width: 340px;
+  height: 40px;
+  background-color: white;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  padding-left: 5px;
+  color: black;
+  border-radius: 20px;
+}
+
+.breadCrumb_span {
+  line-height: 20px;
+}
+
+.breadcrumb_item {
+  border-radius: 15px;
+  font-size: 15px;
+  height: 27px;
+  line-height: 20px;
+  margin: 0 5px;
+  font-weight: bold;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.breadcrumb_item_active {
+  background-color: rgba(184, 201, 203, 0.5);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.sad_title {
+  font-size: 26px;
+  line-height: 60px;
+  margin-left: 20px;
+  display: block;
+  color: black;
+  font-weight: 300;
+  padding: 0;
+  font-family: "Manrope";
+}
+
+.illustrationContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.illustration {
+  opacity: 0.5;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.illustation_description {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 25px;
+  color: #e1e4e5;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.cards_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 95%;
+  overflow: hidden;
+}
+
+.card {
+  position: relative;
+  margin-right: 10px;
+  /* width: calc(15% - 10px); */
+  width: 300px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: left;
+  border-radius: 15px;
+  background: #5f9ca1;
+  color: white;
+  min-height: 150px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  cursor: pointer;
+}
+
+.delete_btn, .delete_btn_list {
+  position: absolute;
+  top: 22px;
+  right: 13px;
+  background-color: white;
+  border-radius: 50%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30px;
+  color: black;
+  font-size: 12px;
+  font-weight: 700;
+  height: 30px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.delete_btn:hover, .delete_btn_list:hover {
+  background-color: white;
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+.noteText {
+  display: inline-block;
+  width: 220px;
+  font-size: 20px;
+  white-space: normal;
+  margin-bottom: 70px;
+  margin-left: 10px;
+  max-height: -webkit-max-content;
+  max-height: -moz-max-content;
+  max-height: max-content;
+  height: 50px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.noteDate {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 15px;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* List styles */
+.noteDateList {
+  display: inline-block;
+  font-size: 15px;
+  position: absolute;
+  bottom: -5px;
+  left: 45%;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.list_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.list_item {
+  position: relative;
+  color: black;
+  height: 45px;
+  width: 80vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5px;
+  border: 2px solid rgba(184, 201, 203, 0.5);
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.list_item:hover {
+  background-color: rgba(95, 158, 160, 0.6);
+}
+
+.noteTextList {
+  display: inline-block;
+  position: absolute;
+  top: -15px;
+  left: 10px;
+  width: 420px;
+  font-size: 20px;
+  white-space: normal;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.important_note {
+  background: #e57373;
+  color: white;
+}
+
+.delete_btn_list {
+  border-radius: 8px;
+  top: 5px;
+  right: 10px;
+}
+
+@media (max-width: 995px) {
+  .illustration {
+    position: absolute;
+    left: 210px;
+    top: 200px;
+    width: 700px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+  .illustation_description {
+    position: absolute;
+    left: 310px;
+    bottom: 340px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+}
+
+@media (max-width: 768px) {
+  .breadcrumbContainer {
+    right: 5px;
+    top: 8px;
+    width: 220px;
+    height: 35px;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+  }
+  .breadcrumb_item {
+    margin: 0;
+  }
+  .breadCrumb_span {
+    display: none;
+  }
+  .cards_wrapper {
+    width: 100vw;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  .card {
+    width: 350px;
+  }
+  .list_item {
+    width: 350px;
+    background: #5f9ca1;
+    color: white;
+  }
+  .illustration {
+    position: absolute;
+    left: 0px;
+    top: 200px;
+    width: 380px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+  .illustation_description {
+    position: absolute;
+    display: block;
+    left: 0px;
+    top: 380px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+    /* Konqueror */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+  }
+}

@@ -58,13 +58,13 @@ const AddNoteGroupForm = (props) => {
          {errors.note && Tools.errorHandler(errorHtml)}
          <div className={style.buttonsContainer}>
             <button
-               className={`btn waves-effect waves-light ${style.okayBtn}`}
+               className={`btn waves-light ${style.okayBtn}`}
                type="submit">Подтвердить
-             <i className="material-icons right">check_circle</i>
+               <i className="material-icons right">check_circle</i>
             </button>
             <button
                type="reset"
-               className={`btn waves-effect waves-light ${style.exitBtn}`} onClick={() => props.showEditMode(props.groupId)
+               className={`btn  waves-light ${style.exitBtn}`} onClick={() => props.showEditMode(props.groupId)
                }>Отмена<i className="material-icons right">clear</i></button>
          </div>
       </form >
