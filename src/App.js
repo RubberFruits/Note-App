@@ -12,7 +12,6 @@ import ContainerLogin from './components/Auth/Login/Login';
 import ContainerSignUp from './components/Auth/SignUp/SignUp';
 import { setUserInState } from './redux/reducers/authReducer';
 
-
 const App = ({ userEmail, isAuthenticated, setUserInState }) => {
 
   useEffect(() => {
@@ -58,7 +57,6 @@ const App = ({ userEmail, isAuthenticated, setUserInState }) => {
     </BrowserRouter>
   );
 }
-
 
 export const ContainerApp = (props) => {
   return <App

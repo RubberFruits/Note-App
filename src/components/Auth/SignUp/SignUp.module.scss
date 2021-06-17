@@ -12,6 +12,7 @@
    z-index: 1000;
    font-family: "Manrope";
    font-weight: bold;
+   overflow: hidden;
 }
 
 .signUp_form_wrapper {
@@ -151,6 +152,15 @@
    
    .enter_description {
       font-size:1.4rem;
+      width:95%;
+   }
+}
+
+@media (max-width: 768px) {
+   .enter_description {
+      font-size:1.1rem;
+      text-align: center;
+      margin-left:0;
       width:95%;
    }
 }
