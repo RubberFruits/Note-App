@@ -33,6 +33,7 @@
 .user_email{
    display: inline-block;
    color:white;
+   margin-right:10px;
    font-weight:bold;
 }
 .logout_btn{
@@ -40,6 +41,7 @@
    background-color:#e57373;
    transition:0.2s all ease;
    margin-top:5px;
+   margin-right:10px;
    &:hover{
       background-color:#e57373;
       transform: scale(1.2);

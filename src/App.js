@@ -1,6 +1,8 @@
 //Tools
 import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux'
+import { auth } from './API/firebase';
+import { useEffect } from 'react'
 //Components + styles
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
@@ -11,7 +13,16 @@ import ContainerSignUp from './components/Auth/SignUp/SignUp';
 import { setUserInState } from './redux/reducers/authReducer';
 
 
-const App = props => {
+const App = ({ userEmail, isAuthenticated, setUserInState }) => {
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
+      if (user) {
+        setUserInState(user.email)
+      }
+    })
+    return unsubscribe
+  }, [setUserInState])
 
   return (
     <BrowserRouter>
@@ -19,7 +30,7 @@ const App = props => {
         <Route
           path='/'
           exact
-          render={() => { return <Redirect to='/signup' /> }}
+          render={() => { return isAuthenticated ? <Redirect to='/all' /> : <Redirect to='/signup' /> }}
         />
         <Route
           path='/signup'
@@ -32,12 +43,12 @@ const App = props => {
           render={() => { return <ContainerLogin /> }}
         />
         <Route render={() => <Redirect to={"/signup"} />} />
-        {props.isAuthenticated ? (
+        {isAuthenticated ? (
           <>
             <Header
-              userEmail={props.userEmail}
-              isAuthenticated={props.isAuthenticated}
-              setUserInState={props.setUserInState}
+              userEmail={userEmail}
+              isAuthenticated={isAuthenticated}
+              setUserInState={setUserInState}
             />
             {document.body.clientWidth >= 769 ? <Navbar /> : ''}
             <ContainerContent />

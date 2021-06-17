@@ -17,6 +17,7 @@
 .signUp_form_wrapper {
    width: 23%;
    height: 50%;
+   min-height:450px;
    background-color: white;
    margin-top:2%;
    border-radius: 20px;
@@ -27,6 +28,7 @@
    @extend .signUp_form_wrapper;
    width: 23%;
    height:40%;
+   min-height:380px;
 }
 
 .formWrapper {

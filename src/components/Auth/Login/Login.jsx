@@ -13,7 +13,6 @@ const Login = (props) => {
 
    const [loading, setLoading] = useState(true);
 
-   //! NEED TO RETURN BCS ITS PROMISE
    function login(email, password) {
       return auth.signInWithEmailAndPassword(email, password)
    }
@@ -58,15 +57,14 @@ const LoginForm = props => {
       formState: { errors }
    } = useForm();
 
-   const submittingForm = async data => {
+   const submittingForm = data => {
       if (data.password.length < 6) {
          Tools.errorHandler('Минимальная длина пароля 6 символов')
          return
       }
       setSumbitBtnState(true)
       try {
-         const resp = await props.login(data.email, data.password)
-         props.setUserInState(resp.user.email)
+         props.login(data.email, data.password)
          history.push('/all')
       } catch {
          Tools.errorHandler('Ошибка при входе в аккаунт')

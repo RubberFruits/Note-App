@@ -14,7 +14,6 @@ const Header = (props) => {
       try {
          props.setUserInState(null, false)
          await FirebaseMethods.logOut();
-         console.log(props.isAuthenticated)
          history.push('/login')
       } catch {
          Tools.errorHandler('Ошибка при выходе из аккаунта')

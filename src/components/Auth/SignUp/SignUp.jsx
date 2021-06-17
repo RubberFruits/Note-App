@@ -14,32 +14,17 @@ const SignUp = (props) => {
 
    const [loading, setLoading] = useState(true);
 
-   //! NEED TO RETURN BCS ITS PROMISE
    function signUp(email, password) {
       return auth.createUserWithEmailAndPassword(email, password)
    }
 
-   /* useEffect(() => {
+   useEffect(() => {
       const unsubscribe = auth.onAuthStateChanged(user => {
          setCurrentUser(user);
          setLoading(false);
       })
       return unsubscribe
-   }, []) */
-
-   useEffect(() => {
-      const unsubscribe = auth.onAuthStateChanged(user => {
-         if (!user) {
-            setCurrentUser(null);
-         } else {
-            setCurrentUser(user);
-         }
-         setLoading(false);
-      })
-      return unsubscribe
    }, [])
-
-
 
    return (
       <>
@@ -72,7 +57,7 @@ const SignUpForm = props => {
       formState: { errors }
    } = useForm();
 
-   const submittingForm = async data => {
+   const submittingForm = data => {
       if (data.password !== data.password_repeat) {
          Tools.errorHandler('Пароли не совпадают')
          return
@@ -83,8 +68,7 @@ const SignUpForm = props => {
       }
       setSumbitBtnState(true)
       try {
-         const resp = await props.signUp(data.email, data.password)
-         props.setUserInState(resp.user.email)
+         props.signUp(data.email, data.password)
          history.push('/all')
       } catch {
          Tools.errorHandler('Ошибка при создании аккаунта')
